@@ -1,0 +1,52 @@
+/* Extracted kit values; component-specific materials may override foundation samples. */
+:root {
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --radius-none: 0px;
+  --radius-xl: 20px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-2xl: 28px;
+  --radius-xs: 4px;
+  --radius-full: 9999px; /* CSS pill convention, not an extracted numeric radius. */
+  --glass-border-opacity: 0.3;
+  --glass-fill-opacity: 0.72;
+  --glass-tint-opacity: 0.15;
+}
+[data-theme="light"] {
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F2F2F7;
+  --color-bg-tertiary: #FFFFFF;
+  --color-label-primary: #000000;
+  --color-separator: #C7C7CC;
+  --color-system-blue: #007AFF;
+  --color-system-green: #34C759;
+  --color-system-orange: #FF9500;
+  --color-system-purple: #AF52DE;
+  --color-system-red: #FF3B30;
+  --color-system-yellow: #FFCC00;
+}
+[data-theme="dark"] {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #1C1C1E;
+  --color-bg-tertiary: #2C2C2E;
+  --color-label-primary: #FFFFFF;
+  --color-separator: #545458;
+  --color-system-blue: #0A84FF;
+  --color-system-green: #32D74B;
+  --color-system-orange: #FF9F0A;
+  --color-system-purple: #BF5AF2;
+  --color-system-red: #FF453A;
+  --color-system-yellow: #FFD60A;
+}

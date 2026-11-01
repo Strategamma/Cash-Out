@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 598 112" role="img" aria-label="Cash Out"><title>Cash Out — Cut / Ace</title><style>:root{color:#f1f5ef;--spade-outline:#f1f5ef}</style><g transform="translate(30 14) skewX(-12)">
+<g fill="currentColor">
+<path d="M65 0H23L0 23V61L23 84H65V62H30L23 55V29L30 22H65Z"/>
+<path transform="translate(148)" d="M64 0H21L0 21V44L20 54H43V63H0V84H46L66 64V41L46 31H23V22H64Z"/>
+<path transform="translate(222)" d="M0 0H23V30H46V0H69V84H46V53H23V84H0Z"/>
+</g>
+<path transform="translate(74)" fill="#07140e" stroke="var(--spade-outline,none)" stroke-width=".8" vector-effect="non-scaling-stroke" d="M34 0C28 12 0 29 0 47C0 67 22 75 32 59L23 84H45L36 59C46 75 68 67 68 47C68 29 40 12 34 0Z"/>
+<g fill="#16b56b"><path d="M395.898 44.930A42 42 0 0 1 385.698 69.554L372.868 58.401A25 25 0 0 0 378.939 43.744Z"/><path d="M381.554 73.698A42 42 0 0 1 356.930 83.898L355.744 66.939A25 25 0 0 0 370.401 60.868Z"/><path d="M351.070 83.898A42 42 0 0 1 326.446 73.698L337.599 60.868A25 25 0 0 0 352.256 66.939Z"/><path d="M322.302 69.554A42 42 0 0 1 312.102 44.930L329.061 43.744A25 25 0 0 0 335.132 58.401Z"/><path d="M312.102 39.070A42 42 0 0 1 322.302 14.446L335.132 25.599A25 25 0 0 0 329.061 40.256Z"/><path d="M326.446 10.302A42 42 0 0 1 351.070 0.102L352.256 17.061A25 25 0 0 0 337.599 23.132Z"/><path d="M356.930 0.102A42 42 0 0 1 381.554 10.302L370.401 23.132A25 25 0 0 0 355.744 17.061Z"/><path d="M385.698 14.446A42 42 0 0 1 395.898 39.070L378.939 40.256A25 25 0 0 0 372.868 25.599Z"/>
+<path transform="translate(405)" d="M0 0H23V59L28 64H41L46 59V0H69V64L49 84H20L0 64Z"/>
+<path transform="translate(483)" d="M0 0H76V22H49V84H26V22H0Z"/>
+</g></g></svg>

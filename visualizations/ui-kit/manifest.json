@@ -1,0 +1,527 @@
+[
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Foundations.svg",
+    "sha256": "e2a6647930898675728c7aaf96bc590e486517c837d96773366c7f9c63cbf87b"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/iOS 26 system colors \u00b7 Spacing \u00b7 Border radius.svg",
+    "sha256": "7ada91d3885c3888c1f20ee0629b90386e6fe5be71c35e6870c4f5d5a3f5a336"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color System.svg",
+    "sha256": "f966dfafe605ff3e37e82ceeb202553f0a57c00720ceed9a4d0b994f76280ed5"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Light Mode.svg",
+    "sha256": "5aa7e406d0c3a2f4880583c69ad030f661bd0320439e96690d23f45a7e76d363"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/bg/primary.svg",
+    "sha256": "0cf9cef3194a853bbf4d198e2c15f3b574c5fe6924a9ab688a661ab6d5225247"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/bg/secondary.svg",
+    "sha256": "2a9b40bfb0016112291828746ef7cafe86e37dfc59da4480c93e8182cef0b5c9"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/bg/tertiary.svg",
+    "sha256": "d05a9607e1b44d54aa0b4064cd1967a016a903669fabdf92d2348c843f1f7dd7"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/label/primary.svg",
+    "sha256": "daed5818187fdadee149d6b4b3882a05f5469b19dd89f72384e0561b63a0e264"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/blue.svg",
+    "sha256": "dea18850bd80010bbdfcc2fbdbbfa5801e759487422664c6bcd690847d0f2b07"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/green.svg",
+    "sha256": "1961220f1e60c238db12aa0e0b510fc40ca16e598ce8ee4b70e6312581777a6f"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/red.svg",
+    "sha256": "cc0d854259e02768bbe1da3defc132929bd9de1d1331f5d96d481903976fe312"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/orange.svg",
+    "sha256": "54052eb100bca9486be4ee294706101ef0f8afbf122e59e12e980a154edfa3b1"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/purple.svg",
+    "sha256": "decbebe9208f9acbcf4cdecb6899bb7b0fc23b6c7accdc1963dcc33bcf2d7b8d"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/yellow.svg",
+    "sha256": "c21425891d79663ae39bb69eb3781245f06eddcebe5310cb1d7599efc3e3b8dd"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/separator.svg",
+    "sha256": "88444f7d17c0fbc20ca7802cab08b86e06ddcc5e9a2b0630d5440ec353524163"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Dark Mode.svg",
+    "sha256": "64511df0227b9b4d838f572d0857a337c107a92e5d77ad755a150a6e0ccd5590"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/bg/primary/Dark.svg",
+    "sha256": "9218905496afffa2512db5d62a338a07dabaa8f2a062603091f505e5c4f65eb7"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/bg/secondary/Dark.svg",
+    "sha256": "2fdba244677f4b80a07a7c1ae5412ef52159c52ca19ecf8cfbc5904ebb39e756"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/bg/tertiary/Dark.svg",
+    "sha256": "c69ad77a94ffadef00a6dcae2d49334989281e3f9577aeb4ba073288d630181b"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/label/primary/Dark.svg",
+    "sha256": "92211c8291bbf53874a9ca5d1d653c36c524a0283962536fe9ab002705db7e3c"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/blue/Dark.svg",
+    "sha256": "c92c5570c852790cf45116e0089f656fdd85bd3c77a3d4febbf075a604b45fde"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/green/Dark.svg",
+    "sha256": "1fa135384a4e896704d60c59468eb97287582938d19865b6b1daeb2f1cf0d4e4"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/red/Dark.svg",
+    "sha256": "c21baa9215d66b15bdbb327a929100dd58dea51ff268c6d02d15448e0ce7cba6"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/orange/Dark.svg",
+    "sha256": "6bca7e6ae0a7269eb5a81e12abbc54d839b38c6b0cbd70daad7e59612a587ecb"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/purple/Dark.svg",
+    "sha256": "70bfdf3523e60d10de49f962b8a2333a6dbed95845d714e94a9dc3e314af44e0"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/system/yellow/Dark.svg",
+    "sha256": "a1a8420e8755ac1ef9b0ed129c8c5b5621f1bcbc4f513d4e23789af35c847824"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Color/separator/Dark.svg",
+    "sha256": "bae743b5ffa20ffc7775cae2c3e48b580d7a2841e129e44770a1a5767e4a4914"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Liquid Glass Tokens.svg",
+    "sha256": "f8084183da189c5b97e1d2deb2ae13a04263994fbf7584fe28eb9e92c92cd2dc"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/glass/fill.svg",
+    "sha256": "40563ef8c77d702018e9dacdd6cf447c661cc420f8d3d43803dce05cc20f9d7d"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/glass/fill opacity 72%.svg",
+    "sha256": "cda17f78c58d2fd2cf05083856a73217fba8feaaa37447df21320a8378c5099e"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/glass/border.svg",
+    "sha256": "f44eea8adfa081ecf69988cda04a60b62f4aaab6e654c0eed20fbfda8c98a720"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/glass/border opacity 30%.svg",
+    "sha256": "5026fffb2d1a763cd26ab83596e364677e0309d4b45403ec6b51953bfa1e307b"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/glass/tint.svg",
+    "sha256": "57800be9cb4c0d8019b4c5e2bebd60aaac5c6628b6f3e16ed1e87596303f1d0c"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/glass/tint opacity 15%.svg",
+    "sha256": "09b844c66ace09326265d23616b4623fe4bd46c1b8bce8f082a7f25beac79ff9"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Spacing.svg",
+    "sha256": "7adf496e95b06b553640c56d66734811f667338a586d31e30a25d03d702487c7"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/2.svg",
+    "sha256": "5ab64da7303f426e3df9c08d6a565dc1ae686823f0b9215f561e6c835a46d145"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/2 2px.svg",
+    "sha256": "8572556f9434eced0e429d660a422dee7a5d8202010365f53286186c6b22eec7"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/4.svg",
+    "sha256": "a5ec73d69a336ee2f3e7e65ad04b548ae7cc22600509fb1fc2c7e323c0ad342f"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/4 4px.svg",
+    "sha256": "e849f9aad5ec56fc5cbdeb917ac9e6a5698a95d8a4193e0cd535037bfcebde2f"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/8.svg",
+    "sha256": "fbdff2f0fb4ab85a6fe6821ef6b3baa5a05fe8bc3087b430e51cb4fd76ba0ab2"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/8 8px.svg",
+    "sha256": "5398dc7822f098857deffae9ee1cd045990e7e8e67b429c112d51b2247b57521"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/12.svg",
+    "sha256": "8fe1535189149c550e20d75307937f8b9233318e249e5f559d3fd5ae4164fe43"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/12 12px.svg",
+    "sha256": "de99bd495bc6763850c4f073e6ed1ed2e170c95adb4f13316039c1cb33238620"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/16.svg",
+    "sha256": "530217769fccc687a2b53fcda488e23da71c5f76b533ee8d5faccef7afda5ecb"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/16 16px.svg",
+    "sha256": "f18a81b0fbc8240daa83f22bc4473c89ef012e3d5331417a116e555159d0847c"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/20.svg",
+    "sha256": "30c3fd02ad30ed3873bc1e9f24959bbb50df2f717a00505cab7a2760edac0f9b"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/20 20px.svg",
+    "sha256": "6b341915aa9b00bd74345b7ea7db8244be95bce73e8f3fb7c287b852d0570c23"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/24.svg",
+    "sha256": "d5a0bca87276a49b6cc57bf292ec26502fb23d6d49bc54fc7d8c88d8d6e2db25"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/24 24px.svg",
+    "sha256": "6aab6ed9b12a75d0d68b81416d32df4b3b908e273607cc79bac74ee6743e7f15"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/32.svg",
+    "sha256": "bfc18690d18f1777e2d6d14216b9238557063718ba5cb30935def7ad292a91bb"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/32 32px.svg",
+    "sha256": "4b7acb6819e7c21a31097df758875c1f1fd65d4e23bfc0db2bdb120cc3ed1f46"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/40.svg",
+    "sha256": "d6d4a0474757dc52cff9b0cc7d0777910a024e1d00cac264ac678045ef1c26bc"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/40 40px.svg",
+    "sha256": "0069412cfb5cd8bfd0e961da97bffaadd46c309128c1762bd2bc3b513764fb67"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/48.svg",
+    "sha256": "7bbe306fefaadc47b47bea4b77cfd8556ee7ca6719dd5272c71c6e7bc4fe1fd8"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/48 48px.svg",
+    "sha256": "a78ad8cbdf486a05e0244d0cef813a63595ceae9357366e53d6befb3231df3d4"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/56.svg",
+    "sha256": "35ab9bba5c89aab139fce50dcc76a955e39979d8b432abacc7ca2c80ebc040a4"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/56 56px.svg",
+    "sha256": "b50b8d5e441e5eef978023a84cf2c9f6e253cb0d9263e29fbe57aa8d5add8a41"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/64.svg",
+    "sha256": "33610d8becfea0e4b0ab34353ac6e18217ca72ff319e17920ee8674f27ef024f"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/spacing/64 64px.svg",
+    "sha256": "cc95b0a319c9065fb5759eac31628b1dfd4b3044a82ab54e8c1807115ce4488b"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/Border Radius.svg",
+    "sha256": "3d757630084363ac93e839d5154e583529223344711a6f5a3bc188906f31d863"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/none.svg",
+    "sha256": "8f4481d8fc1d242e306c948ad9c59fb575c6cf37fb694695c4e05cf587df96eb"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/none 0px.svg",
+    "sha256": "b46cb8b9cce7a5928c8611a5e270fa2eff7a90587f90637a27fa66823e7a28a3"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/xs.svg",
+    "sha256": "3ebf01c7ba2d3c40d0584dc455765623657061818e4e14cdc987024e0f01b48b"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/xs 4px.svg",
+    "sha256": "2f6db900e0ba6532b1cf4484da967b75c3c005076b549a575126227718a26724"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/sm.svg",
+    "sha256": "bc17af87792451a1d160f8813705da458029f13dea0a5f1301d0c79defa25090"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/sm 8px.svg",
+    "sha256": "4756f0874619e85209052a3abe8f18b2b6c3fafa3e2d5a5afcb00036630b6292"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/md.svg",
+    "sha256": "656b36658b52d6914ed3f0019b7b1f1310f0cd532e73e05c66bb11f4b5e2d9f8"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/md 12px.svg",
+    "sha256": "d3840f8d98e5f185aaf3fbfdbbd53af9aa5be1f75f8f83d1d1aa8973bae12842"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/lg.svg",
+    "sha256": "fe5d8c73d1df1ef5a3a5651721423bb9625b2b3fea1a715db5f239e2be2baaca"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/lg 16px.svg",
+    "sha256": "6fd0d5e0fd5773fecd9621fc1b908e082c164b1901bb56ea70407838d8a1e26c"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/xl.svg",
+    "sha256": "8c59679d58056073f74806222cb35d28c07bb2a3fad34d85572cf6d22a01476b"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/xl 20px.svg",
+    "sha256": "91c3e3a1227e6520439b339f209e561d3fa48f03b700fe518c4fc149a0d560a3"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/2xl.svg",
+    "sha256": "0c35fe1b502776dfe5c2b4081577fcfe7f6978f90156e38f14534f6bb36c74a3"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/2xl 28px.svg",
+    "sha256": "e793b7fa38cf699f82029985c6e3c91f937fab095efe27b2e680a6faf0c9056d"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/radius/full.svg",
+    "sha256": "3312482dfbb7015a1d8f089203caee7d5c054452dbab85759f6e78e7edbb2303"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy) (1).zip",
+    "file": "foundations/full \u221e.svg",
+    "sha256": "e0276f0fefe7ebff74675723a2b350b41b597f19752ded614ce620aff537b599"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Status Bar.svg",
+    "sha256": "1ee70da4ddfcfb0845247dfda9c4f2919ed35cd27b6737d4f95e2088b447a2c1"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/With Dynamic Island \u00b7 390px width (iPhone 17).svg",
+    "sha256": "52cda05bb26bf89d4d13c442e748481002e87ceae4b2709927b882cb22b7c278"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Status Bar/Dark.svg",
+    "sha256": "53ea7f6bcc39fba4c156a61a45c321ccc991abea4f9b34fc99b45c036acb7584"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Status Bar/Light.svg",
+    "sha256": "3a767c9317f91b6b370a2c77828ecd9c7943eecc5e7f8897d95698c16247eec6"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Navigation Bar \u00b7 Liquid Glass.svg",
+    "sha256": "0502f3455b2240edf8d6c8a814abfe6020ed6f8c9ac122aed9b346f4ba837dee"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Nav Bar/Dark.svg",
+    "sha256": "18787cda8eb36fd84ef44da96072c9b4d36306f0a3322b6329f802728473bb91"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Nav Bar/Light.svg",
+    "sha256": "1eec200e131f7a316ec50433fb3cb011f3e534dbf4cf9bf08b75ae0d6c83a5e9"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Tab Bar \u00b7 Floating Liquid Glass (new iOS 26).svg",
+    "sha256": "42ae3ef8697062a0d71873ac9a8dcb2b5f498d7e2661eddb4343b32306a497a0"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Floating pill with blur \u2014 replaces traditional bottom bar.svg",
+    "sha256": "99eb5cb6cf0d492df3d1c8545c07ca3ede9e08a8a7dfc734c1ec836bc6490664"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Tab Bar/Dark/5 tabs.svg",
+    "sha256": "ff147392af99ce4220a31ad4993b68dfabaa92b65a6fb6fb008789c7dadfc14a"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Tab Bar/Light/5 tabs.svg",
+    "sha256": "991c86422c7dd651c8e48f1839b3093c7cbcc9c4c8a2abb710ade6edf593de7f"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/System Controls.svg",
+    "sha256": "415c94ad0c2e0e4590c7c852066426d2ee9d104489a3ff7b760710e068214bc6"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Buttons.svg",
+    "sha256": "47d7e4b87d1e43bfb01b0954884d39105313fb03cadbe01473276e5af3b7e77d"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Button/Primary.svg",
+    "sha256": "5408aaed7046bb8d344ded8eb3a543688cb4671c22843b121c4b0ca44f81b3ec"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Button/Secondary.svg",
+    "sha256": "98e82f3062f80896c7069e59474466ab99cbd81b1368afd6123b89834dd54e2e"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Button/Destructive.svg",
+    "sha256": "022fd0e4e1d460bfabd8064f43dccf4336c9c749e1112656b59de32a8879c520"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Button/Ghost.svg",
+    "sha256": "571efd9b4cfb8d47fbdb8873a7056987bf14724c5efee8de6c4b6c2c4630e7f8"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Toggle Switch.svg",
+    "sha256": "82071661eb7ef2ab54d8f77ec0389a72d565846dac616d08961a70e64411b64c"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Toggle/On.svg",
+    "sha256": "8b2cbde6a46b11deb4ed9b2d5498115298b551fee97ae7732ab348a0e0ca2c7a"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Toggle/Off.svg",
+    "sha256": "35605737e312e4f3f927a41b137497ee193505481c57d984c8a801419f42364a"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Segmented Control.svg",
+    "sha256": "c2731bbffacaba04aa4649de21836655072e44794e0c3352800ace22d5fa1605"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Segmented Control/3 items.svg",
+    "sha256": "731826834ce40491a0d3634fa1160254020d28978728e2312086101260c8b269"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Cards & Sheets.svg",
+    "sha256": "2c80e571a881e99397fad0c4d58f46d694b835201cec7406c9a0cc04c49d17c5"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Liquid Glass Card.svg",
+    "sha256": "31fb3bab5e99d04f6b7f742c6e4a4caa9b4597157bf6625131811b89cbdb2c66"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/Card/Liquid Glass.svg",
+    "sha256": "4712be59b2bb34a9b44c9f2b210471cfb07409acd71d7fa52dd86f5f0e6ebf7e"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/List Row.svg",
+    "sha256": "ac53f9b971b740a4a028a42501e3c3ab0a2afa7a13f8ba5588ae9e9f8bdbd4fb"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/List Row/Default.svg",
+    "sha256": "9a0f04b13d0807f0ee69f47ab5dac3540b680f83acde5afb86fd824b4f384ae3"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/List Row/With Value.svg",
+    "sha256": "0721117af17589b3ed57795210b3ebb700448b779deead1001ad0f423031afdc"
+  },
+  {
+    "archive": "iOS 26 UI Kit \u2014 Liquid Glass Components (FREE) (Community) (Copy).zip",
+    "file": "components/List Row/Destructive.svg",
+    "sha256": "2c980993569be0e834f066bfd40ede674640c8ce6d30074444a4e645a2908193"
+  }
+]

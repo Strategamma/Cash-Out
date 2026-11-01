@@ -1,0 +1,2836 @@
+[
+  {
+    "source": "components/Button/Destructive.svg",
+    "canvas": {
+      "width": "160",
+      "height": "50",
+      "viewBox": "0 0 160 50",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "160",
+          "height": "50",
+          "rx": "14",
+          "fill": "#FF3B30"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Button/Ghost.svg",
+    "canvas": {
+      "width": "120",
+      "height": "50",
+      "viewBox": "0 0 120 50",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "49",
+          "rx": "13.5",
+          "stroke": "#0A84FF",
+          "stroke-opacity": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Button/Primary.svg",
+    "canvas": {
+      "width": "160",
+      "height": "50",
+      "viewBox": "0 0 160 50",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "160",
+          "height": "50",
+          "rx": "14",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Button/Secondary.svg",
+    "canvas": {
+      "width": "160",
+      "height": "50",
+      "viewBox": "0 0 160 50",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "160",
+          "height": "50",
+          "rx": "14",
+          "fill": "white",
+          "fill-opacity": "0.12"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Buttons.svg",
+    "canvas": {
+      "width": "58",
+      "height": "12",
+      "viewBox": "0 0 58 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Card/Liquid Glass.svg",
+    "canvas": {
+      "width": "438",
+      "height": "280",
+      "viewBox": "0 0 438 280",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "foreignObject",
+        "attributes": {
+          "x": "0",
+          "y": "-16",
+          "width": "438",
+          "height": "296"
+        }
+      },
+      {
+        "element": "div",
+        "attributes": {
+          "style": "backdrop-filter:blur(20px);clip-path:url(#bgblur_0_7_4_clip_path);height:100%;width:100%"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "filter": "url(#filter0_d_7_4)",
+          "data-figma-bg-blur-radius": "40"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "40",
+          "y": "24",
+          "width": "358",
+          "height": "200",
+          "rx": "28",
+          "fill": "white",
+          "fill-opacity": "0.1"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "40.5",
+          "y": "24.5",
+          "width": "357",
+          "height": "199",
+          "rx": "27.5",
+          "stroke": "white",
+          "stroke-opacity": "0.18"
+        }
+      },
+      {
+        "element": "circle",
+        "attributes": {
+          "cx": "88",
+          "cy": "72",
+          "r": "24",
+          "fill": "#0A84FF",
+          "fill-opacity": "0.2"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "64",
+          "y": "174",
+          "width": "100",
+          "height": "34",
+          "rx": "17",
+          "fill": "#0A84FF"
+        }
+      },
+      {
+        "element": "filter",
+        "attributes": {
+          "id": "filter0_d_7_4",
+          "x": "0",
+          "y": "-16",
+          "width": "438",
+          "height": "296",
+          "filterUnits": "userSpaceOnUse",
+          "color-interpolation-filters": "sRGB"
+        }
+      },
+      {
+        "element": "feFlood",
+        "attributes": {
+          "flood-opacity": "0",
+          "result": "BackgroundImageFix"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "in": "SourceAlpha",
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          "result": "hardAlpha"
+        }
+      },
+      {
+        "element": "feOffset",
+        "attributes": {
+          "dy": "16"
+        }
+      },
+      {
+        "element": "feGaussianBlur",
+        "attributes": {
+          "stdDeviation": "20"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in2": "BackgroundImageFix",
+          "result": "effect1_dropShadow_7_4"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in": "SourceGraphic",
+          "in2": "effect1_dropShadow_7_4",
+          "result": "shape"
+        }
+      },
+      {
+        "element": "clipPath",
+        "attributes": {
+          "id": "bgblur_0_7_4_clip_path",
+          "transform": "translate(0 16)"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "40",
+          "y": "24",
+          "width": "358",
+          "height": "200",
+          "rx": "28"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Cards & Sheets.svg",
+    "canvas": {
+      "width": "205",
+      "height": "21",
+      "viewBox": "0 0 205 21",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Floating pill with blur \u2014 replaces traditional bottom bar.svg",
+    "canvas": {
+      "width": "361",
+      "height": "14",
+      "viewBox": "0 0 361 14",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Liquid Glass Card.svg",
+    "canvas": {
+      "width": "132",
+      "height": "16",
+      "viewBox": "0 0 132 16",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/List Row/Default.svg",
+    "canvas": {
+      "width": "390",
+      "height": "56",
+      "viewBox": "0 0 390 56",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "390",
+          "height": "56",
+          "fill": "white",
+          "fill-opacity": "0.06"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "16",
+          "y": "13",
+          "width": "30",
+          "height": "30",
+          "rx": "8",
+          "fill": "#0A84FF",
+          "fill-opacity": "0.2"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "60",
+          "y": "55.5",
+          "width": "326",
+          "height": "0.5",
+          "fill": "white",
+          "fill-opacity": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/List Row/Destructive.svg",
+    "canvas": {
+      "width": "390",
+      "height": "56",
+      "viewBox": "0 0 390 56",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "390",
+          "height": "56",
+          "fill": "white",
+          "fill-opacity": "0.06"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/List Row/With Value.svg",
+    "canvas": {
+      "width": "390",
+      "height": "56",
+      "viewBox": "0 0 390 56",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "390",
+          "height": "56",
+          "fill": "white",
+          "fill-opacity": "0.06"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "16",
+          "y": "13",
+          "width": "30",
+          "height": "30",
+          "rx": "8",
+          "fill": "#0A84FF",
+          "fill-opacity": "0.2"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "60",
+          "y": "55.5",
+          "width": "326",
+          "height": "0.5",
+          "fill": "white",
+          "fill-opacity": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/List Row.svg",
+    "canvas": {
+      "width": "63",
+      "height": "13",
+      "viewBox": "0 0 63 13",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Nav Bar/Dark.svg",
+    "canvas": {
+      "width": "391",
+      "height": "97",
+      "viewBox": "0 0 391 97",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "foreignObject",
+        "attributes": {
+          "x": "-40",
+          "y": "-40",
+          "width": "471",
+          "height": "177"
+        }
+      },
+      {
+        "element": "div",
+        "attributes": {
+          "style": "backdrop-filter:blur(20px);clip-path:url(#bgblur_0_5_3_clip_path);height:100%;width:100%"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "data-figma-bg-blur-radius": "40"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "390",
+          "height": "96",
+          "fill": "white",
+          "fill-opacity": "0.08"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.25",
+          "y": "0.25",
+          "width": "390.5",
+          "height": "96.5",
+          "stroke": "white",
+          "stroke-opacity": "0.12",
+          "stroke-width": "0.5"
+        }
+      },
+      {
+        "element": "clipPath",
+        "attributes": {
+          "id": "bgblur_0_5_3_clip_path",
+          "transform": "translate(40 40)"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "390",
+          "height": "96"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Nav Bar/Light.svg",
+    "canvas": {
+      "width": "391",
+      "height": "97",
+      "viewBox": "0 0 391 97",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "foreignObject",
+        "attributes": {
+          "x": "-40",
+          "y": "-40",
+          "width": "471",
+          "height": "177"
+        }
+      },
+      {
+        "element": "div",
+        "attributes": {
+          "style": "backdrop-filter:blur(20px);clip-path:url(#bgblur_0_5_7_clip_path);height:100%;width:100%"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "data-figma-bg-blur-radius": "40"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "390",
+          "height": "96",
+          "fill": "white",
+          "fill-opacity": "0.72"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.25",
+          "y": "0.25",
+          "width": "390.5",
+          "height": "96.5",
+          "stroke": "white",
+          "stroke-opacity": "0.12",
+          "stroke-width": "0.5"
+        }
+      },
+      {
+        "element": "clipPath",
+        "attributes": {
+          "id": "bgblur_0_5_7_clip_path",
+          "transform": "translate(40 40)"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "390",
+          "height": "96"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Navigation Bar \u00b7 Liquid Glass.svg",
+    "canvas": {
+      "width": "382",
+      "height": "28",
+      "viewBox": "0 0 382 28",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Segmented Control/3 items.svg",
+    "canvas": {
+      "width": "390",
+      "height": "44",
+      "viewBox": "0 0 390 44",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "390",
+          "height": "44",
+          "rx": "12",
+          "fill": "white",
+          "fill-opacity": "0.12"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "130",
+          "height": "44",
+          "rx": "10",
+          "fill": "white",
+          "fill-opacity": "0.18"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Segmented Control.svg",
+    "canvas": {
+      "width": "147",
+      "height": "16",
+      "viewBox": "0 0 147 16",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Status Bar/Dark.svg",
+    "canvas": {
+      "width": "390",
+      "height": "59",
+      "viewBox": "0 0 390 59",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "390",
+          "height": "59",
+          "fill": "black"
+        }
+      },
+      {
+        "element": "mask",
+        "attributes": {
+          "id": "stroke0_4_4",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "clip-path": "url(#clip0_4_4)"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "310",
+          "y": "22",
+          "width": "17",
+          "height": "12",
+          "rx": "2",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "ellipse",
+        "attributes": {
+          "cx": "341",
+          "cy": "28",
+          "rx": "8",
+          "ry": "6",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "355",
+          "y": "22",
+          "width": "25",
+          "height": "12",
+          "rx": "3",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "clipPath",
+        "attributes": {
+          "id": "clip0_4_4"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "70",
+          "height": "12",
+          "fill": "white",
+          "transform": "translate(310 22)"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Status Bar/Light.svg",
+    "canvas": {
+      "width": "390",
+      "height": "59",
+      "viewBox": "0 0 390 59",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "390",
+          "height": "59",
+          "fill": "#F2F2F7"
+        }
+      },
+      {
+        "element": "mask",
+        "attributes": {
+          "id": "stroke0_4_11",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "clip-path": "url(#clip0_4_11)"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "310",
+          "y": "22",
+          "width": "17",
+          "height": "12",
+          "rx": "2",
+          "fill": "black"
+        }
+      },
+      {
+        "element": "ellipse",
+        "attributes": {
+          "cx": "341",
+          "cy": "28",
+          "rx": "8",
+          "ry": "6",
+          "fill": "black"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "355",
+          "y": "22",
+          "width": "25",
+          "height": "12",
+          "rx": "3",
+          "fill": "black"
+        }
+      },
+      {
+        "element": "clipPath",
+        "attributes": {
+          "id": "clip0_4_11"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "70",
+          "height": "12",
+          "fill": "white",
+          "transform": "translate(310 22)"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Status Bar.svg",
+    "canvas": {
+      "width": "139",
+      "height": "21",
+      "viewBox": "0 0 139 21",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/System Controls.svg",
+    "canvas": {
+      "width": "223",
+      "height": "27",
+      "viewBox": "0 0 223 27",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Tab Bar/Dark/5 tabs.svg",
+    "canvas": {
+      "width": "423",
+      "height": "104",
+      "viewBox": "0 0 423 104",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "foreignObject",
+        "attributes": {
+          "x": "-16",
+          "y": "-24",
+          "width": "455",
+          "height": "136"
+        }
+      },
+      {
+        "element": "div",
+        "attributes": {
+          "style": "backdrop-filter:blur(20px);clip-path:url(#bgblur_0_5_13_clip_path);height:100%;width:100%"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "filter": "url(#filter0_d_5_13)",
+          "data-figma-bg-blur-radius": "40"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "24",
+          "y": "16",
+          "width": "375",
+          "height": "56",
+          "rx": "28",
+          "fill": "#1C1C1E",
+          "fill-opacity": "0.82"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "24.5",
+          "y": "16.5",
+          "width": "374",
+          "height": "55",
+          "rx": "27.5",
+          "stroke": "white",
+          "stroke-opacity": "0.12"
+        }
+      },
+      {
+        "element": "circle",
+        "attributes": {
+          "cx": "61.5",
+          "cy": "37",
+          "r": "3",
+          "fill": "#0A84FF"
+        }
+      },
+      {
+        "element": "filter",
+        "attributes": {
+          "id": "filter0_d_5_13",
+          "x": "-16",
+          "y": "-24",
+          "width": "455",
+          "height": "136",
+          "filterUnits": "userSpaceOnUse",
+          "color-interpolation-filters": "sRGB"
+        }
+      },
+      {
+        "element": "feFlood",
+        "attributes": {
+          "flood-opacity": "0",
+          "result": "BackgroundImageFix"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "in": "SourceAlpha",
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          "result": "hardAlpha"
+        }
+      },
+      {
+        "element": "feOffset",
+        "attributes": {
+          "dy": "8"
+        }
+      },
+      {
+        "element": "feGaussianBlur",
+        "attributes": {
+          "stdDeviation": "12"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in2": "BackgroundImageFix",
+          "result": "effect1_dropShadow_5_13"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in": "SourceGraphic",
+          "in2": "effect1_dropShadow_5_13",
+          "result": "shape"
+        }
+      },
+      {
+        "element": "clipPath",
+        "attributes": {
+          "id": "bgblur_0_5_13_clip_path",
+          "transform": "translate(16 24)"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "24",
+          "y": "16",
+          "width": "375",
+          "height": "56",
+          "rx": "28"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Tab Bar/Light/5 tabs.svg",
+    "canvas": {
+      "width": "423",
+      "height": "104",
+      "viewBox": "0 0 423 104",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "foreignObject",
+        "attributes": {
+          "x": "-16",
+          "y": "-24",
+          "width": "455",
+          "height": "136"
+        }
+      },
+      {
+        "element": "div",
+        "attributes": {
+          "style": "backdrop-filter:blur(20px);clip-path:url(#bgblur_0_5_29_clip_path);height:100%;width:100%"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "filter": "url(#filter0_d_5_29)",
+          "data-figma-bg-blur-radius": "40"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "24",
+          "y": "16",
+          "width": "375",
+          "height": "56",
+          "rx": "28",
+          "fill": "white",
+          "fill-opacity": "0.82"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "24.5",
+          "y": "16.5",
+          "width": "374",
+          "height": "55",
+          "rx": "27.5",
+          "stroke": "white",
+          "stroke-opacity": "0.12"
+        }
+      },
+      {
+        "element": "circle",
+        "attributes": {
+          "cx": "61.5",
+          "cy": "37",
+          "r": "3",
+          "fill": "#0A84FF"
+        }
+      },
+      {
+        "element": "filter",
+        "attributes": {
+          "id": "filter0_d_5_29",
+          "x": "-16",
+          "y": "-24",
+          "width": "455",
+          "height": "136",
+          "filterUnits": "userSpaceOnUse",
+          "color-interpolation-filters": "sRGB"
+        }
+      },
+      {
+        "element": "feFlood",
+        "attributes": {
+          "flood-opacity": "0",
+          "result": "BackgroundImageFix"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "in": "SourceAlpha",
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          "result": "hardAlpha"
+        }
+      },
+      {
+        "element": "feOffset",
+        "attributes": {
+          "dy": "8"
+        }
+      },
+      {
+        "element": "feGaussianBlur",
+        "attributes": {
+          "stdDeviation": "12"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in2": "BackgroundImageFix",
+          "result": "effect1_dropShadow_5_29"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in": "SourceGraphic",
+          "in2": "effect1_dropShadow_5_29",
+          "result": "shape"
+        }
+      },
+      {
+        "element": "clipPath",
+        "attributes": {
+          "id": "bgblur_0_5_29_clip_path",
+          "transform": "translate(16 24)"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "24",
+          "y": "16",
+          "width": "375",
+          "height": "56",
+          "rx": "28"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Tab Bar \u00b7 Floating Liquid Glass (new iOS 26).svg",
+    "canvas": {
+      "width": "585",
+      "height": "29",
+      "viewBox": "0 0 585 29",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/Toggle/Off.svg",
+    "canvas": {
+      "width": "55",
+      "height": "39",
+      "viewBox": "0 0 55 39",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "4",
+          "y": "2",
+          "width": "51",
+          "height": "31",
+          "rx": "15.5",
+          "fill": "white",
+          "fill-opacity": "0.18"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "filter": "url(#filter0_d_6_15)"
+        }
+      },
+      {
+        "element": "circle",
+        "attributes": {
+          "cx": "19.5",
+          "cy": "17.5",
+          "r": "13.5",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "filter",
+        "attributes": {
+          "id": "filter0_d_6_15",
+          "x": "0",
+          "y": "0",
+          "width": "39",
+          "height": "39",
+          "filterUnits": "userSpaceOnUse",
+          "color-interpolation-filters": "sRGB"
+        }
+      },
+      {
+        "element": "feFlood",
+        "attributes": {
+          "flood-opacity": "0",
+          "result": "BackgroundImageFix"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "in": "SourceAlpha",
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          "result": "hardAlpha"
+        }
+      },
+      {
+        "element": "feOffset",
+        "attributes": {
+          "dy": "2"
+        }
+      },
+      {
+        "element": "feGaussianBlur",
+        "attributes": {
+          "stdDeviation": "3"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in2": "BackgroundImageFix",
+          "result": "effect1_dropShadow_6_15"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in": "SourceGraphic",
+          "in2": "effect1_dropShadow_6_15",
+          "result": "shape"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Toggle/On.svg",
+    "canvas": {
+      "width": "55",
+      "height": "39",
+      "viewBox": "0 0 55 39",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "y": "2",
+          "width": "51",
+          "height": "31",
+          "rx": "15.5",
+          "fill": "#34C759"
+        }
+      },
+      {
+        "element": "g",
+        "attributes": {
+          "filter": "url(#filter0_d_6_13)"
+        }
+      },
+      {
+        "element": "circle",
+        "attributes": {
+          "cx": "35.5",
+          "cy": "17.5",
+          "r": "13.5",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "filter",
+        "attributes": {
+          "id": "filter0_d_6_13",
+          "x": "16",
+          "y": "0",
+          "width": "39",
+          "height": "39",
+          "filterUnits": "userSpaceOnUse",
+          "color-interpolation-filters": "sRGB"
+        }
+      },
+      {
+        "element": "feFlood",
+        "attributes": {
+          "flood-opacity": "0",
+          "result": "BackgroundImageFix"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "in": "SourceAlpha",
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+          "result": "hardAlpha"
+        }
+      },
+      {
+        "element": "feOffset",
+        "attributes": {
+          "dy": "2"
+        }
+      },
+      {
+        "element": "feGaussianBlur",
+        "attributes": {
+          "stdDeviation": "3"
+        }
+      },
+      {
+        "element": "feColorMatrix",
+        "attributes": {
+          "type": "matrix",
+          "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in2": "BackgroundImageFix",
+          "result": "effect1_dropShadow_6_13"
+        }
+      },
+      {
+        "element": "feBlend",
+        "attributes": {
+          "mode": "normal",
+          "in": "SourceGraphic",
+          "in2": "effect1_dropShadow_6_13",
+          "result": "shape"
+        }
+      }
+    ]
+  },
+  {
+    "source": "components/Toggle Switch.svg",
+    "canvas": {
+      "width": "107",
+      "height": "16",
+      "viewBox": "0 0 107 16",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "components/With Dynamic Island \u00b7 390px width (iPhone 17).svg",
+    "canvas": {
+      "width": "306",
+      "height": "15",
+      "viewBox": "0 0 306 15",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/2xl 28px.svg",
+    "canvas": {
+      "width": "25",
+      "height": "28",
+      "viewBox": "0 0 25 28",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/Border Radius.svg",
+    "canvas": {
+      "width": "187",
+      "height": "22",
+      "viewBox": "0 0 187 22",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/Color/bg/primary/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "black"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/bg/primary.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/bg/secondary/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#1C1C1E"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/bg/secondary.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#F2F2F7"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/bg/tertiary/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#2C2C2E"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/bg/tertiary.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/label/primary/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "white"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/label/primary.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "black"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/separator/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#545458"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/separator.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#C7C7CC"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/blue/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#0A84FF"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/blue.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#007AFF"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/green/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#32D74B"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/green.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#34C759"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/orange/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#FF9F0A"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/orange.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#FF9500"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/purple/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#BF5AF2"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/purple.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#AF52DE"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/red/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#FF453A"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/red.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#FF3B30"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/yellow/Dark.svg",
+    "canvas": {
+      "width": "120",
+      "height": "100",
+      "viewBox": "0 0 120 100",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#FFD60A"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "white",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color/system/yellow.svg",
+    "canvas": {
+      "width": "120",
+      "height": "128",
+      "viewBox": "0 0 120 128",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "80",
+          "rx": "12",
+          "fill": "#FFCC00"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "79",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/Color System.svg",
+    "canvas": {
+      "width": "179",
+      "height": "27",
+      "viewBox": "0 0 179 27",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/Dark Mode.svg",
+    "canvas": {
+      "width": "72",
+      "height": "11",
+      "viewBox": "0 0 72 11",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/Foundations.svg",
+    "canvas": {
+      "width": "287",
+      "height": "38",
+      "viewBox": "0 0 287 38",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/Light Mode.svg",
+    "canvas": {
+      "width": "74",
+      "height": "14",
+      "viewBox": "0 0 74 14",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/Liquid Glass Tokens.svg",
+    "canvas": {
+      "width": "150",
+      "height": "16",
+      "viewBox": "0 0 150 16",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/Spacing.svg",
+    "canvas": {
+      "width": "107",
+      "height": "28",
+      "viewBox": "0 0 107 28",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/full \u221e.svg",
+    "canvas": {
+      "width": "15",
+      "height": "25",
+      "viewBox": "0 0 15 25",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/glass/border opacity 30%.svg",
+    "canvas": {
+      "width": "59",
+      "height": "25",
+      "viewBox": "0 0 59 25",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/glass/border.svg",
+    "canvas": {
+      "width": "120",
+      "height": "60",
+      "viewBox": "0 0 120 60",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "60",
+          "rx": "12",
+          "fill": "white",
+          "fill-opacity": "0.3"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "59",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/glass/fill opacity 72%.svg",
+    "canvas": {
+      "width": "57",
+      "height": "25",
+      "viewBox": "0 0 57 25",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/glass/fill.svg",
+    "canvas": {
+      "width": "120",
+      "height": "60",
+      "viewBox": "0 0 120 60",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "60",
+          "rx": "12",
+          "fill": "white",
+          "fill-opacity": "0.72"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "59",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/glass/tint opacity 15%.svg",
+    "canvas": {
+      "width": "56",
+      "height": "25",
+      "viewBox": "0 0 56 25",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/glass/tint.svg",
+    "canvas": {
+      "width": "120",
+      "height": "60",
+      "viewBox": "0 0 120 60",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "120",
+          "height": "60",
+          "rx": "12",
+          "fill": "white",
+          "fill-opacity": "0.15"
+        }
+      },
+      {
+        "element": "rect",
+        "attributes": {
+          "x": "0.5",
+          "y": "0.5",
+          "width": "119",
+          "height": "59",
+          "rx": "11.5",
+          "stroke": "black",
+          "stroke-opacity": "0.1"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/iOS 26 system colors \u00b7 Spacing \u00b7 Border radius.svg",
+    "canvas": {
+      "width": "392",
+      "height": "18",
+      "viewBox": "0 0 392 18",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/lg 16px.svg",
+    "canvas": {
+      "width": "24",
+      "height": "28",
+      "viewBox": "0 0 24 28",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/md 12px.svg",
+    "canvas": {
+      "width": "24",
+      "height": "28",
+      "viewBox": "0 0 24 28",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/none 0px.svg",
+    "canvas": {
+      "width": "25",
+      "height": "26",
+      "viewBox": "0 0 25 26",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/2xl.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/full.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/lg.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/md.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/none.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/sm.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/xl.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/radius/xs.svg",
+    "canvas": {
+      "width": "64",
+      "height": "64",
+      "viewBox": "0 0 64 64",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/sm 8px.svg",
+    "canvas": {
+      "width": "19",
+      "height": "26",
+      "viewBox": "0 0 19 26",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/12 12px.svg",
+    "canvas": {
+      "width": "97",
+      "height": "12",
+      "viewBox": "0 0 97 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/12.svg",
+    "canvas": {
+      "width": "12",
+      "height": "24",
+      "viewBox": "0 0 12 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "12",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/16 16px.svg",
+    "canvas": {
+      "width": "98",
+      "height": "12",
+      "viewBox": "0 0 98 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/16.svg",
+    "canvas": {
+      "width": "16",
+      "height": "24",
+      "viewBox": "0 0 16 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "16",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/2 2px.svg",
+    "canvas": {
+      "width": "86",
+      "height": "12",
+      "viewBox": "0 0 86 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/2.svg",
+    "canvas": {
+      "width": "2",
+      "height": "24",
+      "viewBox": "0 0 2 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "2",
+          "height": "24",
+          "rx": "1",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/20 20px.svg",
+    "canvas": {
+      "width": "101",
+      "height": "12",
+      "viewBox": "0 0 101 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/20.svg",
+    "canvas": {
+      "width": "20",
+      "height": "24",
+      "viewBox": "0 0 20 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "20",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/24 24px.svg",
+    "canvas": {
+      "width": "101",
+      "height": "12",
+      "viewBox": "0 0 101 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/24.svg",
+    "canvas": {
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "24",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/32 32px.svg",
+    "canvas": {
+      "width": "101",
+      "height": "12",
+      "viewBox": "0 0 101 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/32.svg",
+    "canvas": {
+      "width": "32",
+      "height": "24",
+      "viewBox": "0 0 32 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "32",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/4 4px.svg",
+    "canvas": {
+      "width": "87",
+      "height": "12",
+      "viewBox": "0 0 87 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/4.svg",
+    "canvas": {
+      "width": "4",
+      "height": "24",
+      "viewBox": "0 0 4 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "4",
+          "height": "24",
+          "rx": "2",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/40 40px.svg",
+    "canvas": {
+      "width": "102",
+      "height": "12",
+      "viewBox": "0 0 102 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/40.svg",
+    "canvas": {
+      "width": "40",
+      "height": "24",
+      "viewBox": "0 0 40 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "40",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/48 48px.svg",
+    "canvas": {
+      "width": "102",
+      "height": "12",
+      "viewBox": "0 0 102 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/48.svg",
+    "canvas": {
+      "width": "48",
+      "height": "24",
+      "viewBox": "0 0 48 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "48",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/56 56px.svg",
+    "canvas": {
+      "width": "101",
+      "height": "12",
+      "viewBox": "0 0 101 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/56.svg",
+    "canvas": {
+      "width": "56",
+      "height": "24",
+      "viewBox": "0 0 56 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "56",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/64 64px.svg",
+    "canvas": {
+      "width": "102",
+      "height": "12",
+      "viewBox": "0 0 102 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/64.svg",
+    "canvas": {
+      "width": "64",
+      "height": "24",
+      "viewBox": "0 0 64 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "64",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/spacing/8 8px.svg",
+    "canvas": {
+      "width": "86",
+      "height": "12",
+      "viewBox": "0 0 86 12",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/spacing/8.svg",
+    "canvas": {
+      "width": "8",
+      "height": "24",
+      "viewBox": "0 0 8 24",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": [
+      {
+        "element": "rect",
+        "attributes": {
+          "width": "8",
+          "height": "24",
+          "rx": "4",
+          "fill": "#0A84FF"
+        }
+      }
+    ]
+  },
+  {
+    "source": "foundations/xl 20px.svg",
+    "canvas": {
+      "width": "25",
+      "height": "28",
+      "viewBox": "0 0 25 28",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  },
+  {
+    "source": "foundations/xs 4px.svg",
+    "canvas": {
+      "width": "19",
+      "height": "26",
+      "viewBox": "0 0 19 26",
+      "fill": "none"
+    },
+    "outlined_text": true,
+    "geometry_and_filters": []
+  }
+]
