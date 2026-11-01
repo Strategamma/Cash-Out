@@ -115,10 +115,10 @@ function reviewEntry() {
     ${requireAcknowledgement ? '<label class="check large-check"><input type="checkbox" id="large-ack"> I checked the amount and the warning above.</label>' : ''}
     <p id="save-error" class="error" role="alert"></p>
     <div class="actions"><button type="submit" class="primary" id="save-entry" ${requireAcknowledgement ? 'disabled' : ''}>Record ${money(n)}</button><button type="button" class="secondary" data-entry="back">Edit amount</button></div>
-    <p class="hint">Sample data only · one confirmation, one entry.</p>`, commitAmount);
+    <p class="hint">${isPlatform?'Saved on this device after confirmation':'Sample data only'} · one confirmation, one entry.</p>`, commitAmount);
 }
 
-function commitAmount() {
+async function commitAmount() {
   if (!draft || draft.stage !== 'review' || draft.committed || $('#save-entry').disabled) return;
   if (simulateSaveFailure && !draft.retry) {
     draft.retry = true;
@@ -129,6 +129,8 @@ function commitAmount() {
   draft.committed = true;
   $('#save-entry').disabled = true;
   const n = value(), p = draft.player, kind = draft.kind;
+  const correction=['edit','rake-edit'].includes(kind)||kind==='cashout'&&p.out!==null;
+  try{await persistChange(kind,()=>{
   if (kind === 'rake-edit') {
     event('Rake corrected', `${money(table.rake)} → ${money(n)} · ${draft.reason}`);
     table.rake = n;
@@ -156,12 +158,14 @@ function commitAmount() {
     event(kind === 'reentry' ? 'Player returned' : 'Buy-in recorded', `${p.name} · ${money(n)} · ${draft.payment === 'received' ? 'received' : 'unpaid'}`);
   }
   if (!['receive','payout'].includes(kind)) table.closed = false;
+  },{id:draft.key,subjectId:p?.id??null,family:kind==='edit'||['buy','rebuy','reentry'].includes(kind)?'buy-in':kind==='rake-edit'?'rake':kind,correction,reason:draft.reason});}
+  catch(error){draft.committed=false;$('#save-entry').disabled=false;$('#save-error').textContent=error.message||'Not saved. Keep this entry open.';return;}
   const returnView = draft.returnView;
   const next = kind === 'cashout' && !playing().length ? 'review' : kind === 'buy' || kind === 'reentry' ? 'table' : returnView;
   forceClose();
   view = next;
   render();
-  notify(`Sample ${['rake','rake-edit'].includes(kind) ? 'rake' : kind === 'cashout' ? 'cash-out' : kind === 'receive' || kind === 'payout' ? 'payment' : 'buy-in'} recorded · ${money(n)}`);
+  notify(`${isPlatform?'Saved':'Sample'} ${['rake','rake-edit'].includes(kind) ? 'rake' : kind === 'cashout' ? 'cash-out' : kind === 'receive' || kind === 'payout' ? 'payment' : 'buy-in'} recorded · ${money(n)}`);
 }
 
 function forceClose() { $('#discard-sheet').close(); sheet.close(); draft = null; formDirty = false; window.CashBackupUI?.capture(); }

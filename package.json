@@ -1,1 +1,29 @@
-{"name":"cash-out","private":true,"version":"0.1.0","scripts":{"build":"node scripts/build.mjs","test":"node --test tests/*.test.cjs src/backup/backup.test.cjs visualizations/wireframes/core.test.cjs visualizations/wireframes/history.test.cjs"},"engines":{"node":">=22"}}
+{
+  "name": "cash-out",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.cjs src/backup/backup.test.cjs visualizations/wireframes/core.test.cjs visualizations/wireframes/history.test.cjs",
+    "native:sync": "npm run build && npx cap sync",
+    "native:icons": "node scripts/native-icons.mjs",
+    "android:build": "npm run native:sync && cd android && ./gradlew assembleDebug",
+    "ios:open": "npm run native:sync && npx cap open ios"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/ios": "^8.6.0",
+    "@capacitor/share": "^8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "esbuild": "^0.28.2"
+  }
+}

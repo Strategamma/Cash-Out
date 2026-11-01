@@ -1,18 +1,19 @@
 # Platform foundation and GitHub Pages
 
-This build packages the reviewed sample-data prototype for offline/installation testing. It is not yet the production accounting platform. The immutable transaction ledger, automatic local saving by default, iCloud provider and device release testing are still required. Google snapshots are recovery backups, not live multi-device sync.
+This local beta starts with an empty workspace, automatic device saving and an append-only transaction ledger. The original source design preview remains separate with its sample records. Live cloud setup is deferred until deployment; iCloud and device release testing remain outstanding. Google snapshots are recovery backups, not live multi-device sync.
 
 ## Local build
 
-Node 22 or later; no dependencies or npm install required:
+Node 22 or later; install locked dependencies before building:
 
 ```
+npm ci
 npm test
 npm run build
 python3 -m http.server 9185 --directory dist
 ```
 
-Open http://localhost:9185. Enable device autosave in Settings. Offline files become available after the first successful online service-worker installation; local records are separate IndexedDB data. Google sign-in/uploads require internet. Updates wait until the old app closes; no automatic reload during an active table. Browser/OS storage deletion can remove caches and local records. SVG installation-icon compatibility and iPhone standalone behavior still require device testing.
+Open http://localhost:9185. Device autosave is enabled automatically in the built app. The design preview still requires opt-in. Offline files become available after the first successful online service-worker installation; local records are separate IndexedDB data. Google sign-in/uploads require internet. Updates wait until the old app closes; no automatic reload during an active table. Browser/OS storage deletion can remove caches and local records. PNG installation icons are included; iPhone standalone behavior still requires device testing.
 
 ## Publish yourself
 
@@ -26,9 +27,24 @@ Open http://localhost:9185. Enable device autosave in Settings. Offline files be
 
 Localhost, 127.0.0.1 and the deployed origin have separate storage. Deployment does not transfer records: export a full backup first and explicitly restore on the new origin. Repositories sharing a GitHub Pages origin share browser storage; use a dedicated custom domain before hosting unrelated apps with the same storage names.
 
-## Next implementation milestones
+## Local records and recovery
 
-1. Durable versioned ledger: stable IDs, atomic saves before success feedback, correction records, idempotent submissions, closed-table retention and prototype migration. Start an empty real workspace; keep samples separate.
-2. Connect that ledger to the existing Drive backup controller; default local autosave, cloud onboarding and restore validation. Verify with real OAuth and iPhone.
-3. Add the required private iCloud provider and account/container setup. GitHub Pages hosts the app; it does not provide iCloud authorization or background execution while iOS suspends it.
-4. Complete installation icons, recovery, privacy copy and device release checks. CSV-based advanced insights remain phase two.
+The built app uses `cash-out-platform-v1` IndexedDB, separate from the prototype database. Every confirmed mutation atomically saves the current state and its ledger before the app reports success. Stale tabs and failed saves cannot silently overwrite a newer revision. One current table is supported: close and balance it before starting another; completed tables and unpaid settlements remain in history. Stable numeric player IDs persist across tables; table/workspace/operation IDs are UUIDs. Amounts are integer paise, displayed as INR.
+
+Full backup schema: `format: cash-out-ledger`, `version: 2`, with current table, contacts/photos, payments, retained tables and ledger. Restore validates both accounting and complete replay before replacing records. Explicit version 1 imports establish a labeled legacy baseline; missing earlier transactions cannot be reconstructed. No automatic import of sample/prototype storage occurs. Downloaded backups are unencrypted private files; keep them securely.
+
+Transaction CSV includes a baseline row and transaction rows, stable identities, timestamps, table settings, correction references and exact JSON changes in paise. It includes private record data and is intended for later phase-two analysis. Use the separate names-and-amounts summary when sharing. CSV import/insights remain deferred.
+
+Audit history guards against accidental inconsistency, not deliberate rewriting of the whole backup. Cloud transport currently supports snapshots up to 50 MB; history/photo growth needs monitoring. Export independent backups until cloud is connected.
+
+## Remaining release work
+
+1. Deploy, configure Google OAuth and verify real upload/restore with the v2 ledger. Local/Drive adapters share the validated payload; provider failures must remain visible.
+2. Implement the required private iCloud provider and account/container setup. GitHub Pages hosts app files; it does not provide iCloud authorization or background execution while iOS suspends the app.
+3. Complete privacy copy, persistent-storage/recovery UX, large-history profiling and real iPhone release checks. Multi-device conflict merging is not implemented.
+
+## Verification
+
+52 automated checks pass, including replay, operation deduplication, linked corrections, backup consistency, failure/stale writes, offline asset allowlisting and existing accounting tests. Browser checks used isolated `?backupTest=1` records: create table/contact, exact ₹1,250.50 buy-in, reload, cash-out, close, retain history on next table, historical payment/reversal, rename contact, reject stale-tab overwrite and export/validate/restore the full 9-entry ledger. Cloud and physical-device testing are not included.
+
+Native Android/iOS packaging, GitHub download builds and signing limits are documented in `MOBILE.md`. The iPhone web installation needs no Xcode or Apple membership.

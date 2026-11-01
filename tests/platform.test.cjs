@@ -31,6 +31,9 @@ test('build publishes only explicit public files and resolves local HTML/CSS ass
  const manifest=JSON.parse(read('manifest.webmanifest'));
  assert.equal(new URL(manifest.start_url,'https://example.test/repo/manifest.webmanifest').pathname,'/repo/visualizations/wireframes/index.html');
  assert(!read('sw.js').includes('__ASSETS__'));
+ assert(read('visualizations/wireframes/index.html').includes('window.CASH_OUT_PLATFORM=true'));
+ assert(!read('visualizations/wireframes/index.html').includes('EXPLORE A STATE'));
+ assert(!read('visualizations/wireframes/library.html').includes('window.CASH_OUT_PLATFORM=true'));
 });
 test('offline worker serves repository root, app and versioned assets after successful install',async()=>{
  const w=worker();await w.lifecycle('install');

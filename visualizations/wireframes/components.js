@@ -40,7 +40,7 @@
   }
   function money(cents) {
     if (!Number.isSafeInteger(cents)) return '—';
-    return '₹' + (cents/100).toLocaleString('en-IN', { maximumFractionDigits:2 });
+    return '₹' + (cents/100).toLocaleString('en-IN', { minimumFractionDigits:cents%100?2:0, maximumFractionDigits:2 });
   }
   function amount(cents, { signed = false, label = '' } = {}) {
     return `<span class="ui-amount ${signed ? cents >= 0 ? 'positive' : 'negative' : ''}">${signed ? (cents >= 0 ? '+' : '−') + money(Math.abs(cents)) : money(cents)}</span>${label ? `<small class="ui-amount-label">${escape(label)}</small>` : ''}`;

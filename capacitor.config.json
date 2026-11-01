@@ -1,0 +1,8 @@
+{
+  "appId": "com.strategamma.cashout",
+  "appName": "Cash Out",
+  "webDir": "dist",
+  "backgroundColor": "#0b1514",
+  "android": { "allowMixedContent": false },
+  "ios": { "contentInset": "automatic", "preferredContentMode": "mobile" }
+}

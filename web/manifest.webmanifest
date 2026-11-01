@@ -1,7 +1,25 @@
 {
- "id":"./", "name":"Cash Out — Test App", "short_name":"Cash Out",
- "description":"Private poker accounting. Test version with sample data.",
- "start_url":"./visualizations/wireframes/index.html", "scope":"./", "display":"standalone",
- "background_color":"#0b1514", "theme_color":"#0b1514",
- "icons":[{"src":"./visualizations/wireframes/assets/brand/cash-out-symbol.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+  "id": "./",
+  "name": "Cash Out",
+  "short_name": "Cash Out",
+  "description": "Private poker accounting. Local beta with automatic device saving.",
+  "start_url": "./visualizations/wireframes/index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1514",
+  "theme_color": "#0b1514",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }

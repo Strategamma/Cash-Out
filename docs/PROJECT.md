@@ -1,7 +1,7 @@
 # Cash Out
 
 ## Current state
-Poker prototype in `visualizations/wireframes/`; IndexedDB/Drive snapshots in `src/backup/`. `npm test` (41 checks), `npm run build` creates allowlisted `dist` with offline shell/manifest. GitHub Pages workflow; deployment guide `docs/PLATFORM_SETUP.md`. Offline reload verified; hosted OAuth/iPhone pending. Production ledger/iCloud unbuilt; sample-data test app only.
+UI: `visualizations/wireframes/`; replay-validated v2 ledger: `src/ledger/`. Empty built workspace; awaited IndexedDB saves; seeded preview separate. Capacitor 8 Android/iOS projects, native export share sheet, 57 tests. `npm ci`, `npm run native:sync`; native/Pages workflows. Local SDK/Xcode/auth unavailable; publishing/native compilation pending. User has no Apple membership/Xcode: iPhone uses free PWA. Cloud deferred; iCloud unbuilt. Guides: `docs/MOBILE.md`, `docs/PLATFORM_SETUP.md`.
 
 ## Confirmed requirements
 - iPhone-first, cross-platform; offline after app/data download.
@@ -23,9 +23,9 @@ Poker prototype in `visualizations/wireframes/`; IndexedDB/Drive snapshots in `s
 
 ## Architecture constraints
 - A PWA approximates Apple's glass appearance with web styling rather than native Liquid Glass.
-- Design source: 105 exported SVGs in `visualizations/ui-kit/`; extracted tokens CSS/JSON and source inventory verified. Figma access unnecessary; typography/layout and license terms remain unverified.
-- Keep private records out of public hosting assets and URLs.
+- Design source: 105 SVGs in `visualizations/ui-kit/`, extracted CSS/JSON tokens. Figma unnecessary; typography/layout/license remain unverified.
+- Keep records out of public assets/URLs.
 - Offline changes cannot reach other devices or cloud backups until connectivity returns. Local browser storage can be cleared or evicted, so it must not be the only recoverable copy of important data.
 
 ## Detailed brief
-`visualizations/PRODUCT_BRIEF.md`: requirements. `visualizations/wireframes/README.md`: UI/safeguards; `QA.md`: prototype evidence/limits. Enable autosave to persist prototype records.
+`visualizations/PRODUCT_BRIEF.md`: requirements. `visualizations/wireframes/README.md`: UI/safeguards; `QA.md`: preview evidence/limits. Built app autosaves by default.
