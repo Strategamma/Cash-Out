@@ -2,7 +2,6 @@ import {readFile, writeFile, mkdir, cp, rm} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
-import {build as bundle} from 'esbuild';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const out=path.join(root,'dist');
@@ -23,13 +22,12 @@ if(clientId)await writeFile(path.join(out,'src/backup/config.js'),'window.CASH_O
 for(const file of ['manifest.webmanifest','boot.js','apple-touch-icon.png','icon-192.png','icon-512.png'])await cp(path.join(root,'web',file),path.join(out,file));
 await writeFile(path.join(out,'.nojekyll'),'');
 await mkdir(path.join(out,'downloads'));await cp(path.join(root,'web/downloads.html'),path.join(out,'downloads/index.html'));
-await bundle({entryPoints:[path.join(root,'src/native.js')],outfile:path.join(out,'native.js'),bundle:true,format:'iife',platform:'browser',target:['safari15','chrome100'],minify:true});
 await writeFile(path.join(out,'index.html'),'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Cash Out</title><meta http-equiv="refresh" content="0;url=visualizations/wireframes/index.html"></head><body><a href="visualizations/wireframes/index.html">Open Cash Out test app</a></body></html>');
 for(const page of ['index.html','library.html']){
  const file=path.join(out,'visualizations/wireframes',page);
  let html=await readFile(file,'utf8');
  if(page==='index.html'){
-  html=html.replace('<script src="core.js', '<script src="../../native.js"></script><script>window.CASH_OUT_PLATFORM=true;</script><script src="../../src/ledger/ledger.js"></script><script src="core.js');
+  html=html.replace('<script src="core.js', '<script>window.CASH_OUT_PLATFORM=true;</script><script src="../../src/ledger/ledger.js"></script><script src="core.js');
   html=html.replace('Cash Out · Interactive design','Cash Out · Local beta').replace('Prototype · enable autosave in Settings','Opening your saved workspace…').replace('DESIGN PREVIEW / 01','PRIVATE POKER ACCOUNTING').replace('Local prototype','Local beta').replace('Optional Drive backups. No real payments.<br>₹ is the sample currency.','Automatic device saves. Cloud setup pending.<br>All amounts in INR.');
   html=html.replace(/<div class="scenario">[\s\S]*?<\/div><\/aside>/, '</aside>');
  }
@@ -37,7 +35,7 @@ for(const page of ['index.html','library.html']){
  html=html.replace('</body>','<script src="../../boot.js"></script></body>');
  await writeFile(file,html);
 }
-const publicFiles=['index.html','manifest.webmanifest','boot.js','native.js','apple-touch-icon.png','icon-192.png','icon-512.png','downloads/index.html',...files];
+const publicFiles=['index.html','manifest.webmanifest','boot.js','apple-touch-icon.png','icon-192.png','icon-512.png','downloads/index.html',...files];
 const hash=createHash('sha256');
 for(const file of publicFiles)hash.update(file).update(await readFile(path.join(out,file)));
 const template=await readFile(path.join(root,'web/sw.js'),'utf8');

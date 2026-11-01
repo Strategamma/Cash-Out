@@ -1,7 +1,7 @@
 # Cash Out
 
 ## Current state
-UI: `visualizations/wireframes/`; replay-validated v2 ledger: `src/ledger/`. Empty built workspace; awaited IndexedDB saves; seeded preview separate. Capacitor 8 Android/iOS projects, native export share sheet, 57 tests. `npm ci`, `npm run native:sync`; native/Pages workflows. Local SDK/Xcode/auth unavailable; publishing/native compilation pending. User has no Apple membership/Xcode: iPhone uses free PWA. Cloud deferred; iCloud unbuilt. Guides: `docs/MOBILE.md`, `docs/PLATFORM_SETUP.md`.
+PWA only; native projects/tooling removed to save storage. UI: `visualizations/wireframes/`; validated v2 ledger: `src/ledger/`. Empty built workspace, awaited IndexedDB saves, separate seeded preview. Dependency-free Node 22+: `npm test` (52 checks), `npm run build`; Pages workflow. iPhone/Android install via browser, no Xcode/membership. Cloud deferred until deployment; automatic iCloud unresolved. See `docs/PLATFORM_SETUP.md`.
 
 ## Confirmed requirements
 - iPhone-first, cross-platform; offline after app/data download.

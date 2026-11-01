@@ -1,5 +1,5 @@
 (function(){
- if(window.CashNative?.isNative()||!('serviceWorker' in navigator))return;
+ if(!('serviceWorker' in navigator))return;
  const root=new URL('./',document.currentScript.src);
  // Keep an active table open; updates take effect after old clients close.
  window.addEventListener('load',()=>{

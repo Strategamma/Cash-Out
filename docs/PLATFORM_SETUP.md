@@ -4,10 +4,9 @@ This local beta starts with an empty workspace, automatic device saving and an a
 
 ## Local build
 
-Node 22 or later; install locked dependencies before building:
+Node 22 or later; no third-party dependencies or package installation:
 
 ```
-npm ci
 npm test
 npm run build
 python3 -m http.server 9185 --directory dist
@@ -47,4 +46,4 @@ Audit history guards against accidental inconsistency, not deliberate rewriting 
 
 52 automated checks pass, including replay, operation deduplication, linked corrections, backup consistency, failure/stale writes, offline asset allowlisting and existing accounting tests. Browser checks used isolated `?backupTest=1` records: create table/contact, exact ₹1,250.50 buy-in, reload, cash-out, close, retain history on next table, historical payment/reversal, rename contact, reject stale-tab overwrite and export/validate/restore the full 9-entry ledger. Cloud and physical-device testing are not included.
 
-Native Android/iOS packaging, GitHub download builds and signing limits are documented in `MOBILE.md`. The iPhone web installation needs no Xcode or Apple membership.
+PWA-only distribution: native projects, mobile build workflows and dependencies have been removed. The phone installation page is `/downloads/`; iPhone uses Safari → Share → Add to Home Screen, Android uses Chrome → Install app / Add to Home screen. No Xcode or Apple membership is needed. Generated `dist/` may be removed after verification; GitHub Pages rebuilds it.

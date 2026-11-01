@@ -1,12 +1,4 @@
 dist/
 node_modules/
 .DS_Store
-
-*.keystore
-*.jks
-*.p12
-*.mobileprovision
-*.ipa
-*.apk
-*.aab
 release-artifacts/

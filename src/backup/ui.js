@@ -1,6 +1,6 @@
 /* Optional backup integration for the review prototype. No SDK loads without a client ID. */
 (function(){
- const platform=Boolean(window.CASH_OUT_PLATFORM),native=Boolean(window.CashNative?.isNative());
+ const platform=Boolean(window.CASH_OUT_PLATFORM);
  let ledgerPayload=null,saving=false;
  let ready=false,sdkReady=false,sdkError='',authBusy=false,abort,files=[];
  const config=window.CASH_OUT_GOOGLE||{};
@@ -20,7 +20,7 @@
  }
  function report(error){notify(error?.message||'Backup action failed. Your local records have not been removed.');update()}
  async function initSDK(){
-  sdkReady=false;sdkError='';update();if(!clientId||native)return;
+  sdkReady=false;sdkError='';update();if(!clientId)return;
   try{
    await new Promise((resolve,reject)=>{
     if(window.google?.accounts?.oauth2)return resolve();
@@ -38,7 +38,7 @@
   modal('Enable Drive backups?','AUTOMATIC SNAPSHOTS',`<p>Save ${platform?'these saved tables':'these prototype tables'}, player contact details, photos and history to <strong>${esc(controller.state().account)}</strong>?</p><p class="hint">The backup is private to your Google account. Only Cash Out’s app-data permission is requested.</p><label class="check"><input id="backup-retention" type="checkbox" checked> Keep the latest 10 snapshots in this backup collection. Older snapshots are permanently deleted after a newer backup succeeds.</label><p class="hint">Uncheck to retain all versions. Photos and retained versions use your Google Drive storage.</p><div class="actions"><button class="primary" type="submit">Enable automatic Drive backup</button></div>`,async()=>{await controller.activate({retention:$('#backup-retention').checked?10:0});forceClose();update()});
  }
  function connect(){
-  if(native)return report(new Error('Native cloud sign-in is not configured yet. Export a full backup instead.'));if(!sdkReady||!clientId||authBusy)return;
+  if(!sdkReady||!clientId||authBusy)return;
   authBusy=true;update();
   const client=google.accounts.oauth2.initTokenClient({client_id:clientId,scope:CashDrive.SCOPE,include_granted_scopes:false,
    error_callback:error=>{authBusy=false;report(new Error(error.type==='popup_closed'?'Google connection cancelled. Device saves continue.':'Google sign-in could not open. Allow its popup and try again.'))},
@@ -74,7 +74,7 @@
  });
  window.addEventListener('online',()=>{controller.schedule(0);update()});window.addEventListener('offline',update);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden){controller.schedule(0);update()}});
- function platformPanel(){const s=controller.state();return `<section class="backup-panel" aria-label="Device saves and cloud backups"><div class="notice ${s.error?'ui-error':'good'}" role="status">${esc(status())}</div><p class="hint">Last device save: ${esc(time(s.lastLocal))}<br>Cloud backup: ${esc(time(s.lastCloud))}</p>${s.error==='local'?'<div class="notice ui-error">Recording is paused. Export the last saved backup, then reload. Nothing new will be marked saved.</div>':''}<p>Confirmed changes save automatically on this device. Cloud setup can be completed after deployment.</p>${clientId&&!native?`<div class="actions">${btn(s.configured?'Reconnect Google Drive':'Connect Google Drive','drive-connect','secondary',!sdkReady||authBusy?'disabled':'')}${s.configured?btn('Back up now','drive-now','secondary')+btn('Restore from Google Drive','drive-list','secondary')+btn('Disconnect Google Drive','drive-disconnect','text-button'):''}</div>`:'<p class="hint">Google Drive is not configured yet. Export a full backup regularly until cloud backup is connected. iCloud remains to be implemented.</p>'}<p class="hint">This device copy can be lost if app/browser data is cleared. Full backups include player photos and the complete audit trail.</p></section>`}
+ function platformPanel(){const s=controller.state();return `<section class="backup-panel" aria-label="Device saves and cloud backups"><div class="notice ${s.error?'ui-error':'good'}" role="status">${esc(status())}</div><p class="hint">Last device save: ${esc(time(s.lastLocal))}<br>Cloud backup: ${esc(time(s.lastCloud))}</p>${s.error==='local'?'<div class="notice ui-error">Recording is paused. Export the last saved backup, then reload. Nothing new will be marked saved.</div>':''}<p>Confirmed changes save automatically on this device. Cloud setup can be completed after deployment.</p>${clientId?`<div class="actions">${btn(s.configured?'Reconnect Google Drive':'Connect Google Drive','drive-connect','secondary',!sdkReady||authBusy?'disabled':'')}${s.configured?btn('Back up now','drive-now','secondary')+btn('Restore from Google Drive','drive-list','secondary')+btn('Disconnect Google Drive','drive-disconnect','text-button'):''}</div>`:'<p class="hint">Google Drive is not configured yet. Export a full backup regularly until cloud backup is connected. iCloud remains to be implemented.</p>'}<p class="hint">This device copy can be lost if app/browser data is cleared. Full backups include player photos and the complete audit trail.</p></section>`}
  async function commit(meta,mutate){
   if(!platform)return mutate();
   if(!ready||saving)throw new Error('A device save is already in progress. Please wait.');
@@ -89,8 +89,8 @@
   }catch(error){apply(before);historyView=context.historyView;selectedHistoryId=context.selectedHistoryId;playerFilter=context.playerFilter;nextId=beforeNextId;if(draft?.player){draft.player=table.players.find(p=>p.id===draft.id)||{...contacts.find(p=>p.id===draft.id),buy:0,out:null,priorOut:0,paidIn:0,paidOut:0}}throw error;}
   finally{saving=false;$('#app').inert=false;$('#navigation').inert=false;sheet.inert=false;update()}
  }
- async function exportFull(){if(!ledgerPayload)return notify('No readable saved workspace is available. Existing storage has not been replaced.');try{await download('cash-out-full-backup.json',JSON.stringify(ledgerPayload),'application/json');notify(native?'Share sheet closed. Check that you saved the backup in your chosen location.':'Full backup downloaded. Keep it somewhere safe.')}catch(error){report(error)}}
- async function exportCSV(){if(!ledgerPayload)return;try{await download('cash-out-transactions-v2.csv',CashLedger.csv(ledgerPayload),'text/csv');notify(native?'Share sheet closed. Check your exported CSV in its destination.':'Private transaction CSV downloaded. Use a summary for sharing.')}catch(error){report(error)}}
+ async function exportFull(){if(!ledgerPayload)return notify('No readable saved workspace is available. Existing storage has not been replaced.');try{await download('cash-out-full-backup.json',JSON.stringify(ledgerPayload),'application/json');notify('Full backup downloaded. Keep it somewhere safe.')}catch(error){report(error)}}
+ async function exportCSV(){if(!ledgerPayload)return;try{await download('cash-out-transactions-v2.csv',CashLedger.csv(ledgerPayload),'text/csv');notify('Private transaction CSV downloaded. Use a summary for sharing.')}catch(error){report(error)}}
  function activity(){const t=historyView?recentData():table,entries=ledgerPayload?.ledger.entries.filter(e=>e.table.id===t.id)||[];modal('Table activity','SAVED TRANSACTIONS',`<p>${esc(t.name)} · ${entries.length} saved entries</p><div class="detail-list">${[...entries].reverse().map(e=>`<p><strong>${esc(e.kind.replaceAll('-',' '))}</strong><small>${esc(time(e.time))} · ${e.table.currency} · ${esc(e.table.banker)} banking</small>${e.subjectName?`<small>${esc(e.subjectName)}</small>`:''}${e.changes.filter(c=>['buy','out','rake','paidIn','paidOut','amount'].includes(String(c.path.at(-1)))&&typeof c.after==='number').map(c=>`<small>${esc(String(c.path.at(-1)))}: ${typeof c.before==='number'?money(c.before)+' → ':''}${money(c.after)}</small>`).join('')}${e.changes.filter(c=>c.add&&c.after&&typeof c.after==='object'&&Number.isInteger(c.after.amount)).map(c=>`<small>Payment: ${money(c.after.amount)}</small>`).join('')}${e.reason?`<small>Reason: ${esc(e.reason)}</small>`:''}<small>${e.correctionOf?'Corrects transaction '+esc(e.correctionOf):'Transaction '+esc(e.id)}</small></p>`).join('')||'<p>No transactions for this table yet.</p>'}</div><p class="hint">Every saved entry retains its table settings and exact before/after values. Export the full backup or transaction CSV for the complete record.</p>`)}
  function importFull(){
   modal('Restore a full backup','PREVIEW BEFORE REPLACING',`<p class="muted">Restore a version 2 full backup, or explicitly import a version 1 prototype snapshot. Export your current backup first.</p><label for="full-backup-file">Cash Out JSON backup</label><input id="full-backup-file" type="file" accept=".json" required><button type="submit" class="primary">Validate & preview</button>`,async()=>{

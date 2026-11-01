@@ -31,6 +31,12 @@ test('build publishes only explicit public files and resolves local HTML/CSS ass
  const manifest=JSON.parse(read('manifest.webmanifest'));
  assert.equal(new URL(manifest.start_url,'https://example.test/repo/manifest.webmanifest').pathname,'/repo/visualizations/wireframes/index.html');
  assert(!read('sw.js').includes('__ASSETS__'));
+ assert(!all.includes('native.js'));
+ const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8'));
+ assert.equal(pkg.dependencies,undefined);assert.equal(pkg.devDependencies,undefined);
+ assert(!read('downloads/index.html').includes('APK from'));
+ assert(read('downloads/index.html').includes('Add to Home Screen'));
+ assert(read('downloads/index.html').includes('Install app'));
  assert(read('visualizations/wireframes/index.html').includes('window.CASH_OUT_PLATFORM=true'));
  assert(!read('visualizations/wireframes/index.html').includes('EXPLORE A STATE'));
  assert(!read('visualizations/wireframes/library.html').includes('window.CASH_OUT_PLATFORM=true'));

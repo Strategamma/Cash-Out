@@ -1,8 +1,8 @@
-# Native downloads
-- Goal: package the local-first platform as Android/iOS apps in Strategamma/Cash-Out; leave live cloud setup deferred.
-- Scope: Capacitor projects, native file export/sharing and navigation, icons, repeatable GitHub builds and public development downloads. iPhone signing depends on Apple credentials/membership.
-- Approach: bundle the existing validated app, preserve awaited IndexedDB saves, disable browser-only Drive authorization inside native builds, use OS share sheets for backup/CSV export. Publish honest simulator/source iOS artifacts until signing is available.
-- Risks: no local Android SDK/full Xcode; WebView downloads and identity cannot be treated as browser flows; debug APK signing is for testing only; backups do not migrate automatically across origins/apps.
-- Verification: existing suite, native adapter tests, asset build/sync, GitHub Android/iOS build status and artifact evidence when publishing is available. Physical-device and signed iPhone distribution remain explicit release gates.
+# PWA-only cleanup
+- Goal: prioritize the installable PWA and reduce project storage.
+- Scope: remove native projects, mobile CI, tooling/dependencies, redundant generated builds/archives; preserve app source, cloud adapter, ledger, icons, tests, design references and browser records.
+- Approach: restore a dependency-free Node build; keep GitHub Pages and refresh phone installation guidance. Preserve Git history rather than rewrite it for small savings.
+- Risks: dangling native imports, deleted required assets and stale deployment instructions.
+- Verification: accounting/backup/ledger/offline suite, build asset references, syntax checks, storage totals and install-page browser check. Cloud/device testing remains pending.
 
-- Status: native projects/assets generated; native sync and 57 tests pass; plist/Xcode project syntax validated. No local SDK/full Xcode or Git credentials; GitHub Desktop computer access was not approved. Native compilation and public release require a push followed by successful Actions runs. User confirmed no Apple membership/Xcode; free iPhone PWA is the distribution route.
+- Status: native projects, tooling, mobile workflow, source ZIP and generated build removed. 52 PWA/accounting/backup checks and dependency-free build passed; browser verified iPhone/Android PWA installation guidance. Saved browser records and design references were preserved.

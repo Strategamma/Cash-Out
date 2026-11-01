@@ -1,24 +1,24 @@
 # Cash Out
 
-Private, local-first poker accounting for tables, buy-ins, cash-outs and settlement. Local beta; cloud setup is pending.
+An installable, local-first PWA for private poker accounting: tables, buy-ins, cash-outs, history and settlement. Local beta; cloud setup is pending.
 
-- [Android downloads / development releases](https://github.com/Strategamma/Cash-Out/releases)
-- [Install on iPhone or open the web app](https://strategamma.github.io/Cash-Out/downloads/)
-- [Native build and installation guide](docs/MOBILE.md)
-- [GitHub Pages setup](docs/PLATFORM_SETUP.md)
+[Open / install Cash Out](https://strategamma.github.io/Cash-Out/downloads/) after the GitHub Pages deployment succeeds.
 
-Downloads appear after the corresponding GitHub Actions builds succeed. Android is a development-signed Debug APK. iPhone currently uses Safari → Share → Add to Home Screen, free and without Xcode. An iOS simulator ZIP is not an iPhone installer.
+- **iPhone:** open in Safari → Share → Add to Home Screen; enable Open as Web App if offered.
+- **Android:** open in Chrome → Install app / Add to Home screen.
+- No Xcode, Apple membership, APK or app-store submission required.
+- Offline startup is available after the initial successful online load. Confirmed changes save locally. Export full backups regularly until cloud backup is connected.
 
-## Development
+## Development and publishing
 
-Node 22+:
+Node 22+; no third-party dependencies or package installation:
 
 ```
-npm ci
 npm test
 npm run build
+python3 -m http.server 9185 --directory dist
 ```
 
-`dist/` contains only allowlisted public app assets; private records stay in device storage. The built app starts empty with automatic local saves and an audit ledger. The design preview in `visualizations/wireframes/` retains its separate sample data.
+`dist/` is generated and can be deleted after testing; GitHub Actions rebuilds it for publishing. Push to `main` and choose **Settings → Pages → GitHub Actions**. See [deployment setup](docs/PLATFORM_SETUP.md).
 
-For native builds: `npm run native:sync`, then Android SDK/JDK 21 or Xcode 26+ as described in the mobile guide. Export backups regularly until cloud backup is connected. Do not uninstall an app holding your only copy of important records.
+The built app starts empty with automatic local saves and a validated audit ledger. The design preview in `visualizations/wireframes/` keeps its separate sample data. Private records remain in browser storage, outside the public build. Google Drive setup follows deployment; automatic iCloud backup remains unresolved.
