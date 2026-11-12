@@ -1,7 +1,7 @@
 # Cash Out
 
 ## Current state
-PWA only; native projects/tooling removed to save storage. UI: `visualizations/wireframes/`; validated v2 ledger: `src/ledger/`. Empty built workspace, awaited IndexedDB saves, separate seeded preview. Dependency-free Node 22+: `npm test` (52 checks), `npm run build`; Pages workflow. iPhone/Android install via browser, no Xcode/membership. Cloud deferred until deployment; automatic iCloud unresolved. See `docs/PLATFORM_SETUP.md`.
+PWA only; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `src/ledger/`. Empty built workspace, awaited IndexedDB saves, separate seeded preview. Dependency-free Node 22+: `npm test` (52 checks), `npm run build`; Pages workflow. Browser installation; no Xcode/membership. Cloud deferred; automatic iCloud unresolved. `docs/ROADMAP.md` tracks release gates. Nov 13 audit: Pages 404; two local commits unpushed. Setup: `docs/PLATFORM_SETUP.md`.
 
 ## Confirmed requirements
 - iPhone-first, cross-platform; offline after app/data download.

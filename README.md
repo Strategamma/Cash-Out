@@ -4,6 +4,8 @@ An installable, local-first PWA for private poker accounting: tables, buy-ins, c
 
 [Open / install Cash Out](https://strategamma.github.io/Cash-Out/downloads/) after the GitHub Pages deployment succeeds.
 
+[Release roadmap and remaining work](docs/ROADMAP.md)
+
 - **iPhone:** open in Safari → Share → Add to Home Screen; enable Open as Web App if offered.
 - **Android:** open in Chrome → Install app / Add to Home screen.
 - No Xcode, Apple membership, APK or app-store submission required.
