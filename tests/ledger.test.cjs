@@ -86,3 +86,29 @@ test('failed and stale writes preserve the prior durable state and reject later 
  await assert.rejects(()=>L.commit(controller,before,next,{id:'retry',kind:'rebuy',time}),/Disk full/);
  const other=saving();await other.controller.enable(before);other.store.value.revision++;await assert.rejects(()=>L.commit(other.controller,before,next,{id:'stale',kind:'rebuy',time}),/Another tab/);assert.deepEqual(other.store.value.payload,before);
 });
+test('re-entry, zero stack, repeated rake and post-payout correction retain exact history',()=>{
+ let data=change(seated(),'cashout',s=>{s.table.players[0].out=400000;},{subjectId:1,family:'cashout'});
+ data=change(data,'settlement-payment',s=>s.payments.push({id:'first-payout',from:'bank',to:1,amount:400000,recent:false}));
+ data=change(data,'reentry',s=>{const p=s.table.players[0];p.priorOut=p.out;p.out=null;p.buy+=100000;p.paidIn+=100000;},{subjectId:1,family:'buy-in'});
+ assert.equal(core.balance(data.table).pending.length,1);assert.equal(core.balance(data.table).out,400000);
+ for(let i=0;i<2;i++)data=change(data,'rake',s=>{s.table.rake+=100000;});
+ data=change(data,'cashout',s=>{s.table.players[0].out=s.table.players[0].priorOut;},{subjectId:1,family:'cashout'});
+ assert(core.balance(data.table).balanced);assert.deepEqual(core.obligations(data.table,data.payments),[]);
+ data=change(data,'edit',s=>{s.table.players[0].buy-=100000;},{subjectId:1,family:'buy-in',correction:true,reason:'Incorrect second buy-in'});
+ assert.equal(core.balance(data.table).difference,-100000);
+ assert.equal(core.obligations(data.table,data.payments)[0].net,-100000);
+ assert.equal(data.payments[0].amount,400000);
+});
+
+test('long photo-bearing audit validates without mutating the supplied backup',t=>{
+ let data=seated();const photo='data:image/png;base64,'+'A'.repeat(1000000);
+ data=change(data,'player-edited',s=>{s.contacts[0].photo=photo;s.table.players[0].photo=photo;});
+ for(let i=0;i<200;i++){
+  const next=L.copy(data);next.table.players[0].buy++;
+  data=L.append(data,next,{id:'stress-'+i,kind:'rebuy',time});
+ }
+ const before=JSON.stringify(data),start=performance.now();L.validate(data,core,history);
+ t.diagnostic(`203 entries with a 1 MB photo: ${Math.round(performance.now()-start)} ms validation`);
+ assert.equal(JSON.stringify(data),before);
+ assert.equal(data.table.players[0].buy,500200);
+});

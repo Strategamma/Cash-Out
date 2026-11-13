@@ -36,6 +36,12 @@
     }).filter(p => p.net !== 0);
   }
 
+  function canRemoveSeat(player, payments) {
+    return Boolean(player) && player.out === null &&
+      [player.buy, player.last, player.paidIn, player.paidOut, player.priorOut || 0].every(n => n === 0) &&
+      !payments.some(pay => pay.from === player.id || pay.to === player.id);
+  }
+
   function filterPlayers(table, payments, filter = 'all') {
     const outstanding = new Set(obligations(table, payments).map(p => p.id));
     return table.players.filter(p => filter === 'playing' ? p.out === null : filter === 'cashed' ? p.out !== null : filter === 'outstanding' ? outstanding.has(p.id) : true);
@@ -105,7 +111,7 @@
     return data;
   }
 
-  const api = { MAX_AMOUNT, integer, parseAmount, inputValue, balance, obligations, filterPlayers, suggestTransfers, summaryModel, validateBackup };
+  const api = { MAX_AMOUNT, integer, parseAmount, inputValue, balance, obligations, canRemoveSeat, filterPlayers, suggestTransfers, summaryModel, validateBackup };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.CashCore = api;
 })(typeof window === 'undefined' ? {} : window);

@@ -7,7 +7,7 @@
  const state=data=>Object.fromEntries(fields.map(key=>[key,copy(data[key])]));
  const fail=message=>{throw new Error(message)};
  function validateState(data,core,history){
-  core.validateBackup({demo:true,version:1,...state(data)});
+  core.validateBackup({demo:true,version:1,table:data.table,contacts:data.contacts,payments:data.payments});
   history.validate(data.historyTables,data.contacts,core);
   const tables=[data.table,...data.historyTables];
   if(tables.some(t=>typeof t.id!=='string'||!t.id||t.id.length>100)||new Set(tables.map(t=>t.id)).size!==tables.length)fail('Duplicate or missing table identity.');
@@ -79,7 +79,7 @@
    if(!e||typeof e.id!=='string'||!e.id||ids.has(e.id)||e.sequence!==i+1||!Number.isFinite(Date.parse(e.time))||typeof e.kind!=='string'||!e.kind||typeof e.family!=='string'||!e.table?.id||e.table.currency!=='INR'||!Array.isArray(e.changes)||!e.changes.length)fail('Invalid or duplicate ledger transaction.');
    if(e.correction&&String(e.reason||'').trim().length<3)fail('Missing correction reason.');
    if(e.correctionOf&&!data.ledger.entries.slice(0,i).some(prior=>prior.id===e.correctionOf&&prior.table.id===e.table.id&&prior.subjectId===e.subjectId&&prior.family===e.family))fail('Invalid correction reference.');
-   const contexts=copy([projection.table,...projection.historyTables]);
+   const contexts=[projection.table,...projection.historyTables].map(({id,name,date,small,big,banker,bankerId})=>({id,name,date,small,big,banker,bankerId}));
    ids.add(e.id);for(const change of e.changes)replayChange(projection,change);
    validateState(projection,core,history);
    const context=[...contexts,projection.table,...projection.historyTables].find(t=>t.id===e.table.id);

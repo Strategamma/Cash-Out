@@ -1,0 +1,47 @@
+/* Cash Out adaptations. Sources, exact versions and modification notes: THIRD_PARTY_NOTICES.md. */
+:root{--cash-motion-ease:cubic-bezier(.22,1,.36,1)}
+/* transitions.dev — modal open/close (modified: native dialog, gentler travel). */
+.product-modal[open]{animation:cash-modal-open 250ms var(--cash-motion-ease)}
+.product-modal.is-closing{animation:cash-modal-close 150ms var(--cash-motion-ease) forwards}
+.product-modal::backdrop{animation:cash-backdrop-in 180ms ease-out}
+@keyframes cash-modal-open{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@keyframes cash-modal-close{to{opacity:0;transform:scale(.96)}}
+@keyframes cash-backdrop-in{from{opacity:0}to{opacity:1}}
+/* Magic UI BlurFade: ported to CSS; only the page heading blurs, never amounts. */
+.mu-blur-fade{animation:cash-blur-fade 260ms var(--cash-motion-ease) both}
+@keyframes cash-blur-fade{from{opacity:0;transform:translateY(4px);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}
+/* Magic UI ShineBorder: same masked radial-gradient technique, single pass. */
+.mu-shine-host{position:relative;isolation:isolate}
+.mu-shine-border{position:absolute;inset:0;pointer-events:none;border-radius:inherit;padding:1px;background-image:radial-gradient(transparent,transparent,var(--green),transparent,transparent);background-size:300% 300%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:cash-shine 4s linear 1 forwards;opacity:.55;z-index:1}
+@keyframes cash-shine{0%{background-position:0% 0%;opacity:0}15%{opacity:.55}85%{opacity:.55}100%{background-position:100% 100%;opacity:0}}
+/* Spectrum UI MorphButton: stable button footprint; content/state morph only. */
+.spectrum-action{position:relative;overflow:hidden}
+.spectrum-action .action-content{display:inline-flex;align-items:center;justify-content:center;gap:8px;animation:cash-content-in 180ms var(--cash-motion-ease)}
+.spectrum-action[data-state=loading]{cursor:wait}
+.spectrum-action[data-state=success]{opacity:1}
+.spectrum-action[data-state=error]{color:var(--red);border-color:var(--red)}
+.action-spinner{width:18px;height:18px;animation:cash-spin 800ms linear infinite}
+@keyframes cash-spin{to{transform:rotate(360deg)}}
+@keyframes cash-content-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* transitions.dev — success check, modified to remove rotation/bob/blur. */
+.t-success-check{display:inline-flex;opacity:1;animation:cash-check-fade 220ms var(--cash-motion-ease)}
+.t-success-check svg{width:18px;height:18px;overflow:visible}
+.t-success-check path{stroke-dasharray:24;stroke-dashoffset:24;animation:cash-check-draw 250ms var(--cash-motion-ease) forwards}
+@keyframes cash-check-fade{from{opacity:0}to{opacity:1}}
+@keyframes cash-check-draw{to{stroke-dashoffset:0}}
+.segment.has-indicator{position:relative;isolation:isolate}
+.segment.has-indicator>a,.segment.has-indicator>button{position:relative;z-index:1}
+.segment.has-indicator .selected{background:transparent;box-shadow:none}
+.segment .selection-indicator{position:absolute;top:5px;bottom:5px;border-radius:999px;background:var(--green);pointer-events:none;z-index:0;box-shadow:0 2px 8px var(--shadow)}
+#toast.has-status{display:flex;align-items:center;gap:9px}
+#toast.has-status .t-success-check{flex:0 0 18px}
+@media(prefers-reduced-motion:reduce){.product-modal[open],.product-modal.is-closing,.product-modal::backdrop,.mu-blur-fade,.mu-shine-border,.action-content,.action-spinner,.t-success-check,.t-success-check path{animation:none!important;transition:none!important}.mu-shine-border{display:none}.t-success-check path{stroke-dashoffset:0}.mu-blur-fade{filter:none;transform:none;opacity:1}.product-modal.is-closing{opacity:1;transform:none}}
+
+/* MagicCard gradient port: decoration stays behind stable, readable content. */
+.magic-card{position:relative;isolation:isolate;overflow:hidden;--glow-x:50%;--glow-y:50%}
+.magic-card::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(260px circle at var(--glow-x) var(--glow-y),color-mix(in srgb,var(--green) 16%,transparent),transparent 75%);opacity:0;transition:opacity 180ms ease-out}
+.magic-card:focus-within::before,.magic-card:active::before{opacity:1}
+@media(hover:hover) and (pointer:fine){.magic-card:hover::before{opacity:1}}
+.spectrum-stat{animation:cash-stat-in 240ms var(--cash-motion-ease) var(--stat-delay,0ms) both}
+@keyframes cash-stat-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.magic-card::before{transition:none}.spectrum-stat{animation:none}}

@@ -52,6 +52,7 @@ function entryError() {
   if (n === null) return draft.amount ? 'Use digits and up to two decimal places.' : '';
   if (n === 0 && !['cashout','rake-edit'].includes(draft.kind)) return 'Enter an amount greater than zero.';
   if (['rebuy','buy','reentry'].includes(draft.kind) && !CashCore.integer(p.buy + n)) return 'This would exceed the supported table amount.';
+  if (['rebuy','buy','reentry'].includes(draft.kind) && draft.payment === 'received' && !CashCore.integer(p.paidIn + n)) return 'Total received money would exceed the supported amount.';
   if (draft.kind === 'rake' && !CashCore.integer(table.rake + n)) return 'This would exceed the supported rake amount.';
   if (draft.kind === 'cashout' && !CashCore.integer((p.priorOut || 0) + n)) return 'This would exceed the supported cash-out amount.';
   if (['receive','payout'].includes(draft.kind)) {
@@ -171,6 +172,7 @@ async function commitAmount() {
 function forceClose() { $('#discard-sheet').close(); sheet.close(); draft = null; formDirty = false; window.CashBackupUI?.capture(); }
 
 function close() {
+  if (window.CashBackupUI?.state()?.saving) return;
   const moneyChanged = draft && !draft.committed && (draft.stage === 'review' || draft.amount !== draft.initial || draft.payment || draft.reason);
   if (!moneyChanged && !formDirty) return forceClose();
   if (!$('#discard-sheet').open) $('#discard-sheet').showModal();
@@ -188,7 +190,7 @@ document.addEventListener('input', e => {
 document.addEventListener('click', e => {
   const lossButton = e.target.closest('[data-loss]');
   if (lossButton) {
-    if (lossButton.dataset.loss === 'discard') forceClose();
+    if (lossButton.dataset.loss === 'discard') { if (!window.CashBackupUI?.state()?.saving) forceClose(); }
     else $('#discard-sheet').close();
     return;
   }

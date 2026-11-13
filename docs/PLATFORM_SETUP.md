@@ -40,10 +40,20 @@ Audit history guards against accidental inconsistency, not deliberate rewriting 
 
 1. Deploy, configure Google OAuth and verify real upload/restore with the v2 ledger. Local/Drive adapters share the validated payload; provider failures must remain visible.
 2. Implement the required private iCloud provider and account/container setup. GitHub Pages hosts app files; it does not provide iCloud authorization or background execution while iOS suspends the app.
-3. Complete privacy copy, persistent-storage/recovery UX, large-history profiling and real iPhone release checks. Multi-device conflict merging is not implemented.
+3. Verify recovery/install UX on actual phones; finish large-history profiling and real iPhone release checks. Multi-device conflict merging is not implemented.
 
 ## Verification
 
-52 automated checks pass, including replay, operation deduplication, linked corrections, backup consistency, failure/stale writes, offline asset allowlisting and existing accounting tests. Browser checks used isolated `?backupTest=1` records: create table/contact, exact ₹1,250.50 buy-in, reload, cash-out, close, retain history on next table, historical payment/reversal, rename contact, reject stale-tab overwrite and export/validate/restore the full 9-entry ledger. Cloud and physical-device testing are not included.
+58 automated checks pass, including replay, operation deduplication, linked corrections, backup consistency, failure/stale writes, offline asset allowlisting and existing accounting tests. Browser checks used isolated `?backupTest=1` records: create table/contact, exact ₹1,250.50 buy-in, reload, cash-out, close, retain history on next table, historical payment/reversal, rename contact, reject stale-tab overwrite and export/validate/restore the full 9-entry ledger. Cloud and physical-device testing are not included.
 
 PWA-only distribution: native projects, mobile build workflows and dependencies have been removed. The phone installation page is `/downloads/`; iPhone uses Safari → Share → Add to Home Screen, Android uses Chrome → Install app / Add to Home screen. No Xcode or Apple membership is needed. Generated `dist/` may be removed after verification; GitHub Pages rebuilds it.
+
+## Recovery/install Settings
+
+Settings reports installed standalone execution separately from an accepted install request, with Safari/iPad instructions and browser-menu fallbacks. Offline readiness requires an active worker; waiting updates tell the user to finish work and close all windows. No active table is reloaded automatically.
+
+Storage estimates cover the whole origin (including cache), not just Cash Out records. Protection is requested only by the user; unavailable/denied requests stay visible. Even granted protection cannot prevent intentional deletion.
+
+File export remains unconfirmed until the user checks the actual file and presses the confirmation button. Receipts live separately in localStorage and bind to workspace/revision; they are reminders, not proof of file integrity. New revisions or a seven-day-old receipt prompt a new backup. A current acknowledged Drive snapshot also satisfies the reminder. CSV export does not count as a full recovery backup.
+
+Browser QA verified unconfirmed export state, denied storage request, offline-ready status, no console errors and no overflow at 320px. Actual destination-file saving, standalone installation, OS storage behavior and live cloud are device/account release gates.

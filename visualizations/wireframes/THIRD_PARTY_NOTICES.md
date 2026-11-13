@@ -23,3 +23,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Approved UI component ports
+
+`profile.js`, `ui-polish.js` and `ui-polish.css` adapt the installed sources described in the pinned source versions below. No React, Motion, Tailwind or Radix runtime is installed.
+
+- Magic UI, copyright Magic UI, commit `2712647e193295d2fd85b65e58095fb2009736d7`: MagicCard pointer/focus gradient and BlurFade heading entrance. Plain DOM/CSS port; no tilt, orb or continuous loops. [MIT license](licenses/magicui-LICENSE.md).
+- Spectrum UI, commit `acdc998c64829f8ae037be48e3c273ccc8d71f60`: StatCards captions and MorphButton pending feedback. Values stay static; loading follows the real awaited action, never a timed success. [Apache-2.0 license](licenses/spectrum-ui-LICENSE).
+- Transitions.dev, commit `20d70c1262bf721c0300c2946cbe1fc7605a555c`: modal entrance timing adapted to the existing native dialog; dirty-draft guards retained. [Full component license](licenses/transitions-dev-LICENSE).
+
+Ports modified for Cash Out on 13 November 2026. Saved-record statistics remain in paise and use completed, reconciled sessions. Reduced motion removes entrances, spinner rotation, pointer tracking and indicator travel.

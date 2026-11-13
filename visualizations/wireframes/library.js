@@ -53,3 +53,18 @@ document.addEventListener('click', e => {
 });
 
 document.addEventListener('click',e=>{const toggle=e.target.closest('[data-action="catalog-toggle"]');if(toggle)toggle.setAttribute('aria-checked',toggle.getAttribute('aria-checked')!=='true')});
+
+// Catalogue fixtures stay separate from the platform's saved records.
+const profileFixture=CashHistory.seed();
+const profileExample=CashHistory.stats(profileFixture.tables,1);
+let catalogProfileTab='overview';
+function renderProfileExample(){
+ const el=document.querySelector('#catalog-profile');
+ el.innerHTML=CashProfile.summary(profileExample)+CashProfile.tabs(catalogProfileTab,profileExample.sessions)+(catalogProfileTab==='overview'?CashProfile.chart(profileExample.trend)+CashProfile.statistics(profileExample):CashProfile.sessions(profileExample.recent));
+ CashPolish.mount(el);
+}
+document.querySelector('#catalog-content').insertAdjacentHTML('beforeend',section('08 / Saved-record profiles','Shared production renderers; these catalogue examples use clearly separated sample records. Inspect sessions with the slider or arrow keys.','<div id="catalog-profile" class="specimen" style="max-width:520px"></div>'));
+renderProfileExample();
+document.addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(b?.dataset.action==='profile-tab'){catalogProfileTab=b.dataset.value;renderProfileExample();document.querySelector('#catalog-profile .active')?.focus({preventScroll:true})}if(b?.dataset.action==='recent'&&b.closest('#catalog-profile')){document.querySelector('#catalog-profile').insertAdjacentHTML('beforeend','<p class="hint" role="status">Sample table. Open the app to inspect your saved session records.</p>')}});
+document.addEventListener('input',e=>{if(e.target.id!=='profile-session')return;const holder=document.createElement('div');holder.innerHTML=CashProfile.chart(profileExample.trend,Number(e.target.value));const chart=e.target.closest('.co-chart');chart.querySelector('svg').outerHTML=holder.querySelector('svg').outerHTML;chart.querySelector('.co-session-readout').innerHTML=holder.querySelector('.co-session-readout').innerHTML;e.target.setAttribute('aria-valuetext',holder.querySelector('input').getAttribute('aria-valuetext'))});
+CashPolish.mount(document.querySelector('#catalog-content'));

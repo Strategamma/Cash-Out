@@ -16,17 +16,17 @@ Checked 13 November 2026. Scope: an installable iPhone/Android PWA, hosted on Gi
 - [x] Google Drive app-data adapter, account binding, retries and versioned backup controls; provider behavior tested with mocks, not a live account.
 - [x] GitHub Pages workflow; allowlisted public build excludes private records.
 
-Evidence: 52 automated checks pass on this audit. Earlier browser checks covered exact amounts after reload, retained table payments, reversal, stale-tab conflict, full export/restore and mobile layout. They do not replace physical-device or live-cloud checks.
+Evidence: 66 automated checks pass after the full bug audit; see `docs/QA_AUDIT.md` for coverage, fixes and limitations. Earlier browser checks covered exact amounts after reload, retained table payments, reversal, stale-tab conflict, full export/restore and mobile layout. They do not replace physical-device or live-cloud checks.
 
 ## Release path, in order
 
 | Step | Remaining work | Owner / completion evidence |
 | --- | --- | --- |
 | 1. Publish local beta | Push the two local commits and enable Pages → GitHub Actions. | Repository owner authenticates/pushes; successful Pages workflow and reachable HTTPS app. At audit, remote HEAD is `9ca8c59`; local HEAD is `79ca47d`; Pages returns 404. |
-| 2. Finish device/recovery UX | Persistent-storage request and honest status; backup reminders/storage usage; clear offline-ready and update states; privacy notice; install controls with platform fallback. | Coding work, targeted tests and browser checks. Never force-reload an active table or promise storage cannot be lost. |
+| 2. Device/recovery UX — implemented | Persistent-storage request/status, storage estimate, revision-aware file backup reminders, explicit export-file confirmation, offline-ready/update states, privacy notice and platform install controls. | 58 automated checks; browser storage denial/export-unconfirmed/320px layout verified. Physical-device install and actual saved-file confirmation remain release checks. No forced reload. |
 | 3. Activate Google Drive | Create/configure public Web OAuth client, approved origins/audience/test users and repo `GOOGLE_CLIENT_ID` variable. | User-owned Google setup; verify real connection, upload, expired consent, offline queue and restore into a fresh test installation. No client secret in frontend. |
 | 4. Resolve iCloud requirement | Automatic private iCloud backup is not implemented. Manual full-backup export through Files to iCloud Drive is the interim recovery option. | Explicit product decision needed: accept manual iCloud export for initial release, or complete a supported Apple-backed integration and its account setup before calling v1 complete. PWA installation alone is not iCloud backup. |
-| 5. Final accounting/recovery audit | Full realistic sessions, re-entry, multiple rake additions, mixed payments, edits after payouts, old-table correction needs, import errors and long-history/photo growth. | Automated regression coverage, measured large-history behavior and fixes for issues found. Review historic financial editing before claiming every old record is editable. |
+| 5. Accounting/recovery audit — locally completed | 66 automated checks, 3,000 randomized settlement cases, long photo-bearing audit and browser session/history/reversal/reload checks. | Six safeguard/performance fixes; `docs/QA_AUDIT.md`. Physical device/file-picker/cloud gates remain. Historical financial amounts are read-only after archiving; payment corrections remain available. |
 | 6. Physical-phone sign-off | Install on iPhone Safari and Android Chrome; offline cold launch, quit/reopen, numeric keyboard, file/photo picker, backup/export/restore and app update. | Real-device results recorded in QA; use disposable test tables. Desktop emulation does not count as phone proof. |
 | 7. Release | Remove remaining beta/preview copy only after release gates pass; retain backup and failure status. | Hosted smoke test, privacy copy and a tested recovery path. |
 
@@ -39,4 +39,4 @@ Evidence: 52 automated checks pass on this audit. Earlier browser checks covered
 
 ## Immediate next work
 
-Publish the existing local beta while coding the device/recovery UX in step 2. Configure Google only after the production origin exists. Keep independent full backups until live cloud recovery is verified. Do not claim automatic iCloud support without resolving step 4.
+Publish the local beta with the recovery/install UX, then perform real-phone and cloud recovery checks. Configure Google only after the production origin exists. Keep independent full backups until live cloud recovery is verified. Do not claim automatic iCloud support without resolving step 4.

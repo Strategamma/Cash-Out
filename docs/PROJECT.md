@@ -1,7 +1,7 @@
 # Cash Out
 
 ## Current state
-PWA only; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `src/ledger/`. Empty built workspace, awaited IndexedDB saves, separate seeded preview. Dependency-free Node 22+: `npm test` (52 checks), `npm run build`; Pages workflow. Browser installation; no Xcode/membership. Cloud deferred; automatic iCloud unresolved. `docs/ROADMAP.md` tracks release gates. Nov 13 audit: Pages 404; two local commits unpushed. Setup: `docs/PLATFORM_SETUP.md`.
+PWA; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `src/ledger/`. Empty workspace, awaited IndexedDB saves, preview. Dependency-free Node 22+: `npm test` (80 checks), `npm run build`; Pages workflow. Cloud deferred; automatic iCloud unresolved. Recovery/install Settings: `web/boot.js`, `web/recovery.js`; explicit file receipts, storage/install/offline status. QA: `docs/QA_AUDIT.md`. Roadmap: `docs/ROADMAP.md`. Deployment pending. Setup: `docs/PLATFORM_SETUP.md`.
 
 ## Confirmed requirements
 - iPhone-first, cross-platform; offline after app/data download.
@@ -28,4 +28,4 @@ PWA only; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `
 - Offline changes cannot reach other devices or cloud backups until connectivity returns. Local browser storage can be cleared or evicted, so it must not be the only recoverable copy of important data.
 
 ## Detailed brief
-`visualizations/PRODUCT_BRIEF.md`: requirements. `visualizations/wireframes/README.md`: UI/safeguards; `QA.md`: preview evidence/limits. Built app autosaves by default.
+`visualizations/master-wireframes/`: master designs. `docs/FEATURE_EXPANSION.md`: accepted features. `visualizations/PRODUCT_BRIEF.md`: requirements. `visualizations/wireframes/README.md`: UI/safeguards; `QA.md`: preview evidence/limits. Autosaves; profile/motion: `profile.js`, `ui-polish.*`.

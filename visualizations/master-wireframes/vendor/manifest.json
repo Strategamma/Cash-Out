@@ -1,0 +1,125 @@
+{
+  "purpose": "Pinned component sources for Cash Out adaptations; no third-party build or runtime executed.",
+  "files": [
+    {
+      "library": "transitions-dev",
+      "repository": "Jakubantalik/transitions.dev",
+      "commit": "20d70c1262bf721c0300c2946cbe1fc7605a555c",
+      "source": "LICENSE",
+      "url": "https://raw.githubusercontent.com/Jakubantalik/transitions.dev/20d70c1262bf721c0300c2946cbe1fc7605a555c/LICENSE",
+      "file": "transitions-dev/LICENSE",
+      "sha256": "4e46c9a6c0c05a2a19b0c2914c98d912bed920462f4edcf741f43c6cbcf3b37a",
+      "bytes": 5149
+    },
+    {
+      "library": "transitions-dev",
+      "repository": "Jakubantalik/transitions.dev",
+      "commit": "20d70c1262bf721c0300c2946cbe1fc7605a555c",
+      "source": "skills/transitions-dev/06-modal.md",
+      "url": "https://raw.githubusercontent.com/Jakubantalik/transitions.dev/20d70c1262bf721c0300c2946cbe1fc7605a555c/skills/transitions-dev/06-modal.md",
+      "file": "transitions-dev/06-modal.md",
+      "sha256": "55638bf7e92d54d54cd09ad360442d7433e5b7a4b34bea24138643c76c03339a",
+      "bytes": 2814
+    },
+    {
+      "library": "transitions-dev",
+      "repository": "Jakubantalik/transitions.dev",
+      "commit": "20d70c1262bf721c0300c2946cbe1fc7605a555c",
+      "source": "skills/transitions-dev/10-success-check.md",
+      "url": "https://raw.githubusercontent.com/Jakubantalik/transitions.dev/20d70c1262bf721c0300c2946cbe1fc7605a555c/skills/transitions-dev/10-success-check.md",
+      "file": "transitions-dev/10-success-check.md",
+      "sha256": "bd588b8f6039e63184b4161f6ae086f2333ed8a155229da702d7563fee41e610",
+      "bytes": 7122
+    },
+    {
+      "library": "transitions-dev",
+      "repository": "Jakubantalik/transitions.dev",
+      "commit": "20d70c1262bf721c0300c2946cbe1fc7605a555c",
+      "source": "skills/transitions-dev/_root.css",
+      "url": "https://raw.githubusercontent.com/Jakubantalik/transitions.dev/20d70c1262bf721c0300c2946cbe1fc7605a555c/skills/transitions-dev/_root.css",
+      "file": "transitions-dev/_root.css",
+      "sha256": "2a11a0448d2cbb802a07a9df3a63508c162dbac1887c6e8049f3b650fccfc974",
+      "bytes": 10073
+    },
+    {
+      "library": "magicui",
+      "repository": "magicuidesign/magicui",
+      "commit": "2712647e193295d2fd85b65e58095fb2009736d7",
+      "source": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/magicuidesign/magicui/2712647e193295d2fd85b65e58095fb2009736d7/LICENSE.md",
+      "file": "magicui/LICENSE.md",
+      "sha256": "0147b84235ed916b8b4e89c1f80655351c5afe7d211b629be61f553a227b34ba",
+      "bytes": 1060
+    },
+    {
+      "library": "magicui",
+      "repository": "magicuidesign/magicui",
+      "commit": "2712647e193295d2fd85b65e58095fb2009736d7",
+      "source": "apps/www/registry/magicui/blur-fade.tsx",
+      "url": "https://raw.githubusercontent.com/magicuidesign/magicui/2712647e193295d2fd85b65e58095fb2009736d7/apps/www/registry/magicui/blur-fade.tsx",
+      "file": "magicui/blur-fade.tsx",
+      "sha256": "99a8e83aa8817f48e26d921e959ff9abefb5c2f1f0b72b166ed95e88e015949f",
+      "bytes": 2220
+    },
+    {
+      "library": "magicui",
+      "repository": "magicuidesign/magicui",
+      "commit": "2712647e193295d2fd85b65e58095fb2009736d7",
+      "source": "apps/www/registry/magicui/shine-border.tsx",
+      "url": "https://raw.githubusercontent.com/magicuidesign/magicui/2712647e193295d2fd85b65e58095fb2009736d7/apps/www/registry/magicui/shine-border.tsx",
+      "file": "magicui/shine-border.tsx",
+      "sha256": "c9344b563c2427f26393f6f5e2fe5c72d6a3fcb4b90b8f073ebad515e963c46c",
+      "bytes": 1649
+    },
+    {
+      "library": "spectrum-ui",
+      "repository": "arihantcodes/spectrum-ui",
+      "commit": "acdc998c64829f8ae037be48e3c273ccc8d71f60",
+      "source": "LICENSE",
+      "url": "https://raw.githubusercontent.com/arihantcodes/spectrum-ui/acdc998c64829f8ae037be48e3c273ccc8d71f60/LICENSE",
+      "file": "spectrum-ui/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "library": "spectrum-ui",
+      "repository": "arihantcodes/spectrum-ui",
+      "commit": "acdc998c64829f8ae037be48e3c273ccc8d71f60",
+      "source": "app/registry/morph-button/morph-button.tsx",
+      "url": "https://raw.githubusercontent.com/arihantcodes/spectrum-ui/acdc998c64829f8ae037be48e3c273ccc8d71f60/app/registry/morph-button/morph-button.tsx",
+      "file": "spectrum-ui/morph-button.tsx",
+      "sha256": "f74dc343b0189c66944aea5eff650f8b4fcaed6197127b2f03a314b46062dc0b",
+      "bytes": 10992
+    },
+    {
+      "library": "spectrum-ui",
+      "repository": "arihantcodes/spectrum-ui",
+      "commit": "acdc998c64829f8ae037be48e3c273ccc8d71f60",
+      "source": "app/registry/spectrumui/loading-button-dependencies.tsx",
+      "url": "https://raw.githubusercontent.com/arihantcodes/spectrum-ui/acdc998c64829f8ae037be48e3c273ccc8d71f60/app/registry/spectrumui/loading-button-dependencies.tsx",
+      "file": "spectrum-ui/loading-button-dependencies.tsx",
+      "sha256": "230392108a2a1830bf6eed1a2c4f364620191955a44694a32c269e4e61d568e1",
+      "bytes": 3117
+    },
+    {
+      "library": "magicui",
+      "repository": "magicuidesign/magicui",
+      "commit": "2712647e193295d2fd85b65e58095fb2009736d7",
+      "source": "apps/www/registry/magicui/magic-card.tsx",
+      "url": "https://raw.githubusercontent.com/magicuidesign/magicui/2712647e193295d2fd85b65e58095fb2009736d7/apps/www/registry/magicui/magic-card.tsx",
+      "file": "magicui/magic-card.tsx",
+      "sha256": "b6ed8ac1dda703f9d7b1b89bbca0162d5ae17c8144c947d663cdac35c29b47a2",
+      "bytes": 5894
+    },
+    {
+      "library": "spectrum-ui",
+      "repository": "arihantcodes/spectrum-ui",
+      "commit": "acdc998c64829f8ae037be48e3c273ccc8d71f60",
+      "source": "app/registry/charts/stat-cards.tsx",
+      "url": "https://raw.githubusercontent.com/arihantcodes/spectrum-ui/acdc998c64829f8ae037be48e3c273ccc8d71f60/app/registry/charts/stat-cards.tsx",
+      "file": "spectrum-ui/stat-cards.tsx",
+      "sha256": "c16b375f431349f026408700b565351627347b4e10e8f3466884da26e71855b8",
+      "bytes": 11185
+    }
+  ]
+}
