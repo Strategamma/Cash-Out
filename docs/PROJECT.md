@@ -5,7 +5,7 @@ PWA; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `src/l
 
 ## Confirmed requirements
 - iPhone-first, cross-platform; offline after app/data download.
-- V1 requires Google Drive and iCloud automatic saving/backups with minimal setup. Provider integration and Apple membership cost need validation.
+- V1 requires Google Drive and iCloud automatic saving/backups with minimal setup. Provider integration/costs need validation.
 - One host edits; others receive read-only summaries of results and remaining payments. Delivery method undecided.
 - No native contacts. Saved players have a name, optional phone/photo. Banker selects a saved player or host; stable banker ID prevents self-payments.
 - Private tables; searchable seating; all/playing/cashed/outstanding filters; keypad buy-in entry; player cards showing total buy-in; inline edit/rebuy/cash-out; profit/loss; cashed-out players remain editable; confirmed deletion.
@@ -28,4 +28,4 @@ PWA; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `src/l
 - Offline changes cannot reach other devices or cloud backups until connectivity returns. Local browser storage can be cleared or evicted, so it must not be the only recoverable copy of important data.
 
 ## Detailed brief
-`visualizations/master-wireframes/`: master designs. `docs/FEATURE_EXPANSION.md`: accepted features. `visualizations/PRODUCT_BRIEF.md`: requirements. `visualizations/wireframes/README.md`: UI/safeguards; `QA.md`: preview evidence/limits. Autosaves; profile/motion: `profile.js`, `ui-polish.*`.
+`visualizations/master-wireframes/`: baseline. `visualizations/proposals/next-chapter/`: two 48-screen directions. `docs/FEATURE_EXPANSION.md`: accepted features. `visualizations/PRODUCT_BRIEF.md`: requirements. `visualizations/wireframes/README.md`: UI/safeguards; `QA.md`: preview evidence/limits. Autosaves; profile/motion: `profile.js`, `ui-polish.*`.

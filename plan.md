@@ -1,7 +1,7 @@
-# Approved UI integration
-- Goal: bring approved profile/components and restrained library effects into the PWA.
-- Scope: saved-record profile statistics, Overview/Sessions, keyboard/touch chart inspection, shared library, existing dialog feedback and decorative effects.
-- Approach: reusable dependency-free components using CashHistory's paise statistics; build/precache all runtime assets and retain licenses. Preserve existing persistence, validation and reconciliation.
-- Risks: empty/single/negative histories and archived identities; never report save success before persistence. No fixture statistics in production or new ledger schema.
-- Verification: component/data edge tests, existing suite, build/precache inspection, browser profile/mobile/theme checks against built app.
-- Status: implemented and verified. 79-test full suite plus nine focused tests (80 distinct); build/precache passed. Built-app QA covered saved/empty profiles, loss inspection, session links, mobile/themes and persisted edit after reload. Deployment not performed.
+# Compact management and cash-out review
+- Goal: resolve three annotated UI issues without changing accounting behavior.
+- Scope: next-chapter roster management, table/app settings distinction and cash-out review in both directions.
+- Approach: keep More beside primary actions even while open; paired management actions and payment metrics; labeled Table setup control; one compact confirmation card with call-time state and visible confirm/edit actions.
+- Risks: retain zero-stack handling, exact amounts, early-profit override, separate payments, native details and 44px targets.
+- Verification: route/safeguard tests; cash-out/expanded states; phone/desktop and both directions; screenshots.
+- Status: complete in preview. Sixteen responsive combinations, zero-stack flow, native More alignment and minimum targets verified; route, motion and export checks pass. Production and deployment unchanged.
