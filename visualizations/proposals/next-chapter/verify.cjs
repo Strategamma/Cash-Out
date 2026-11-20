@@ -9,6 +9,32 @@ function setup(){
 (async()=>{
  const {ctx,events}=setup(),routes=vm.runInContext('Object.keys(pages)',ctx);
  for(const route of routes){const html=vm.runInContext(`pages[${JSON.stringify(route)}]()`,ctx);assert(html.includes('<h1>'),route);assert(!html.includes('undefined'),route);for(const [,src] of html.matchAll(/src="([^"$]+)"/g))assert(fs.existsSync(path.resolve(root,src)),route+': '+src)}
+ // Task hierarchy and financial states, isolated from the route gallery fixtures.
+ const flow=setup().ctx;
+ const run=code=>vm.runInContext(code,flow);
+ const homeHTML=run('home()');assert(homeHTML.indexOf('Resume table')<homeHTML.indexOf('Create a cash table'));assert(!homeHTML.includes('You’re banking'));
+ run("tableBanker.name='Riley <Shah>'");assert(run('home()').includes('Riley &lt;Shah&gt;'));run('tableClosed=true');assert(!run('home()').includes('Resume table'));run('tableClosed=false;players=[]');assert(!run('home()').includes('Resume table'));
+ const seat=setup().ctx;const seatRun=code=>vm.runInContext(code,seat);
+ const seatHTML=seatRun("rosterRows('',true)");assert(seatHTML.indexOf('Jordan Patel')<seatHTML.indexOf('Alex Morgan'));assert(seatHTML.includes('<details class="seated-players" >'));assert(!seatHTML.includes('No phone number added'));
+ seatRun("contacts[4].phone='+91 98765 43210'");assert(seatRun("rosterRows('98765',true)").includes('Jordan Patel'));assert(!seatRun("rosterRows('no such name',true)").includes('Jordan Patel'));assert(seatRun("rosterRows('Alex',true)").includes('class="seated-players" open'));
+ seatRun("amountDraft={kind:'rebuy',id:1,amount:'2000',received:'no',reason:''}");const entryReview=seatRun('amountReview()');assert(entryReview.includes('₹7,000'));assert(entryReview.includes('Not received · due'));assert(entryReview.includes('Original call-time clock'));assert(!entryReview.includes('hero-art'));
+ seatRun("amountDraft.kind='correction';amountDraft.reason='Duplicate entry'");const correction=seatRun('amountReview()');assert(correction.includes('Unchanged'));assert(correction.includes('Duplicate entry'));assert(correction.includes('₹2,000'));
+ seatRun("amountDraft.kind='buy';amountDraft.id=5;minimumHours=4");assert(seatRun('amountReview()').includes('4-hour call time'));
+ const entry=seatRun('amountPage()');assert(entry.includes('<details class="entry-keypad">'));assert(entry.includes('aria-describedby="amount-help amount-error"'));assert(!entry.includes('checked required'));
+ const incomplete=seatRun('review()');assert(incomplete.indexOf('Alex Morgan')<incomplete.indexOf('Player buy-ins'));assert(incomplete.includes('Unaccounted for · stacks missing'));assert(/data-action="close-table" disabled/.test(incomplete));
+ seatRun('players[0].out=4000;players[1].out=4700');assert(!/data-action="close-table" disabled/.test(seatRun('review()')));seatRun('players[0].out=4001');assert(/data-action="close-table" disabled/.test(seatRun('review()')));
+ const social=setup().ctx,socialRun=code=>vm.runInContext(code,social);
+ const lineup=socialRun('tableLineup()');assert(lineup.includes('<details class="table-lineup">'));assert(!lineup.includes('<details class="table-lineup" open'));assert.equal((lineup.match(/data-action="profile"/g)||[]).length,4);assert(lineup.includes('not assigned seats'));assert(lineup.includes('Cashed out'));assert(lineup.includes('Playing'));
+ socialRun("players[0].name='A <B> & friends'");assert(socialRun('tableLineup()').includes('A &lt;B&gt; &amp; friends'));socialRun('players=[]');assert.equal(socialRun('tableLineup()'),'');
+ const podium=socialRun('tournamentPodium()');assert.equal((podium.match(/Prize not recorded paid/g)||[]).length,3);assert(podium.indexOf('Jamie Chen')<podium.indexOf('Alex Morgan'));assert(podium.includes('₹7,500'));assert(podium.includes('₹4,500'));assert(podium.includes('₹3,000'));assert(socialRun('tournamentResults()').includes('Review prize payments'));assert(!socialRun('amountPage()').includes('data-deal'));
+ const game=setup().ctx,gameRun=code=>vm.runInContext(code,game);
+ const progress=gameRun('nightProgress()');assert(progress.includes('max="4" value="2"'));assert(progress.includes('aria-label="Player cash-out stacks recorded"'));assert.equal((progress.match(/class="done"/g)||[]).length,1);assert.equal(gameRun('nightSeal()'),'');
+ gameRun('players[0].out=4000;players[1].out=4700');assert(gameRun('nightSeal()').includes('That’s a clean finish.'));assert.equal((gameRun('nightProgress()').match(/class="done"/g)||[]).length,2);
+ gameRun('tableClosed=true');assert.equal((gameRun('nightProgress()').match(/class="done"/g)||[]).length,2);gameRun('players.forEach(p=>{p.received=p.buy;p.paid=p.out})');assert.equal((gameRun('nightProgress()').match(/class="done"/g)||[]).length,3);
+ gameRun('players[0].out+=1');assert.equal(gameRun('nightSeal()'),'');gameRun('players=[]');assert(gameRun('nightProgress()').includes('max="1" value="0"'));assert.equal(gameRun('nightSeal()'),'');
+ assert(gameRun('components()').includes('GAME NIGHT · SESSION &amp; PROGRESS')||gameRun('components()').includes('GAME NIGHT · SESSION & PROGRESS'));
+ assert(!seatRun('tournament()').includes('A night for the title'));assert(seatRun('tournament()').includes("primary\" data-action=\"tournament-pause"));
+ assert(seatRun('settlement()').includes('Record payment'));seatRun('transferPaid=true;activeTransferAmount=0');assert(!seatRun('settlement()').includes('transfer-card'));
  assert.equal(vm.runInContext('insightValues.reduce((a,b)=>a+b,0)',ctx),920);
  const chart=vm.runInContext('insightChart()',ctx);assert.equal((chart.match(/data-action="insight-session"/g)||[]).length,10);assert(chart.includes('<table>'));assert(chart.includes('₹9,20,000'));assert(!/<summary>[^]*?<h[1-6]/.test(chart.split('</summary>')[0]));assert(chart.includes('id="insight-slider"'));
  assert(vm.runInContext('insightPlayerCard()',ctx).includes('+₹12,400'));assert(vm.runInContext('insightPlayerCard()',ctx).includes('6 / 10'));

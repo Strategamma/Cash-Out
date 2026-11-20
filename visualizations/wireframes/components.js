@@ -51,8 +51,9 @@
   function field({ id, label, optional = false, placeholder = '', value = '', error = '', type = 'text', attributes = '' }) {
     return `<label for="${escape(id)}">${escape(label)}${optional ? ' <small>optional</small>' : ''}</label><input id="${escape(id)}" type="${escape(type)}" placeholder="${escape(placeholder)}" value="${escape(value)}"${error ? ` aria-invalid="true" aria-describedby="${escape(id)}-error"` : ''} ${attributes}>${error ? `<p id="${escape(id)}-error" class="error" role="alert">${escape(error)}</p>` : ''}`;
   }
-  function segment(options, selected, action = 'mode') {
-    return `<div class="segment" role="group" aria-label="${action === 'unit' ? 'Entry unit' : 'Settlement route'}">${options.map(option => button({label:option.label,action,variant:option.value === selected ? 'active' : '',attributes:`data-value="${escape(option.value)}" aria-pressed="${option.value === selected}"`})).join('')}</div>`;
+  function actionRow({label,description,action}) {return `<button type="button" class="settings-row action-row" data-action="${escape(action)}"><span><strong>${escape(label)}</strong><small>${escape(description)}</small></span>${icon('arrow',18)}</button>`;}
+  function segment(options, selected, action = 'mode', label) {
+    return `<div class="segment" role="group" aria-label="${escape(label || (action === 'unit' ? 'Entry unit' : 'Settlement route'))}">${options.map(option => button({label:option.label,action,variant:option.value === selected ? 'active' : '',attributes:`data-value="${escape(option.value)}" aria-pressed="${option.value === selected}"`})).join('')}</div>`;
   }
   function keypad() {
     return `<div class="keypad" role="group" aria-label="Amount keypad">${['1','2','3','4','5','6','7','8','9','.','0','⌫'].map(key => button({label:key,action:'key',variant:key==='⌫'?'small':'',attributes:`data-value="${key}" aria-label="${key === '⌫' ? 'Backspace' : key === '.' ? 'Decimal point' : key}"`})).join('')}</div>`;
@@ -63,18 +64,32 @@
   function reviewSummary({ tableName, playerName, cents, resultCents, label = 'AMOUNT TO RECORD', resultLabel = 'Total after this', detail = '' }) {
     return `<div class="review-subject"><span>${escape(tableName)}</span><strong>${escape(playerName)}</strong></div><div class="review-money"><span>${escape(label)}</span><strong>${money(cents)}</strong>${detail ? `<small>${escape(detail)}</small>` : ''}</div><div class="row"><span>${escape(resultLabel)}</span><strong>${money(resultCents)}</strong></div>`;
   }
+  function tableCheck({buy,out,rake,pending=[],difference,balanced}) {
+    const missing=pending.length;
+    return `<section class="balance-card" aria-label="Table balance check"><header><span class="eyebrow">TABLE CHECK</span>${badge(missing?'Stacks missing':balanced?'Balanced':'Needs review',missing?'warning':balanced?'green':'error')}</header><p>${missing?'Expected remaining stacks':'Balance difference'}</p><strong class="balance-value ${difference<0||!missing&&!balanced?'negative':balanced?'positive':''}">${difference<0?'−'+money(Math.abs(difference)):money(difference)}</strong><dl class="balance-breakdown"><div><dt>Buy-ins</dt><dd>${money(buy)}</dd></div><div><dt>Cash-outs</dt><dd>${money(out)}</dd></div><div><dt>Rake</dt><dd>${money(rake)}</dd></div></dl><small>${difference<0?`Cash-outs and rake exceed buy-ins by ${money(-difference)}. Review the entries.`:missing?'Provisional until every player has a stack.':balanced?'Buy-ins = cash-outs + rake. Payments are checked separately.':'Review the entries before closing the table.'}</small></section>`;
+  }
+  function transferCard({label,amount:cash,index}) {
+    return `<article class="transfer-card"><header><span class="eyebrow">TRANSFER ${String(index+1).padStart(2,'0')}</span><span class="tag warning">Not recorded</span></header><h3>${escape(label)}</h3><p class="transfer-value">${money(cash)}</p><footer><small>Confirm after money changes hands.</small>${button({label:'Record paid',action:'record-transfer',variant:'secondary',attributes:`data-index="${Number(index)}"`})}</footer></article>`;
+  }
+  function callClock(player){
+    const clock=typeof module!=='undefined'&&module.exports?require('./call-time.js'):root.CashCallTime;
+    if(player.out!==null||!clock)return '';
+    const state=clock.status(player),period=clock.current(player);
+    return `<span class="call-clock ${state.kind}" data-call-player="${escape(player.id)}"${period?` data-clock-start="${period.startedAt}" data-clock-minimum="${period.minimumMinutes}"`:''}>${escape(state.label)}</span>`;
+  }
   function playerCard(player, net) {
     const complete = player.out !== null;
     const result = (player.out ?? 0) - player.buy;
     const status = complete ? 'Cashed out' : 'Playing';
-    const payment = net > 0 ? `${money(net)} owed` : net < 0 ? `${money(-net)} due` : 'Settled';
-    return `<article class="player" aria-label="${escape(player.name)} player card">
-      <div class="player-top">${avatar(player)}<div class="player-name"><h3>${escape(player.name)}</h3><small><span class="status-dot ${complete ? 'complete' : ''}"></span>${status}${complete ? ' · ' + money(player.out) : ' · result pending'}</small></div><div class="player-value">${amount(player.buy,{label:'Total buy-in'})}</div></div>
-      ${complete ? `<div class="player-result"><span>Final result</span>${amount(result,{signed:true})}<span class="payment-chip ${net>0?'is-owed':net<0?'is-due':'is-settled'}">${escape(payment)}</span></div>` : net > 0 ? `<div class="unpaid-line">Buy-in payment outstanding · ${money(net)}</div>` : ''}
-      <div class="player-bottom">${button({label:complete?'Edit stack':'+ Add money',action:complete?'cashout':'rebuy',variant:complete?'text-button edit-action':'text-button add-action',attributes:`data-id="${player.id}"`})}${button({label:complete?'Payments':'Cash out',action:complete?'payment':'cashout',variant:complete?'text-button payments-action':'text-button cashout-action',attributes:`data-id="${player.id}"`})}${button({content:icon('more',18),action:'player-menu',variant:'text-button ellipsis',attributes:`data-id="${player.id}" aria-label="More actions for ${escape(player.name)}"`})}</div>
+    const paymentLabel = net > 0 ? 'Still to pay' : net < 0 ? 'Still to receive' : 'Payments settled';
+    const paymentTone = net > 0 ? 'is-owed' : net < 0 ? 'is-due' : 'is-settled';
+    return `<article class="player ${complete ? 'is-cashed-out' : 'is-playing'}" data-player-id="${escape(player.id)}" aria-label="${escape(player.name)} player card">
+      <header class="player-top">${avatar(player)}<div class="player-name"><div class="player-title"><h3>${escape(player.name)}</h3>${callClock(player)}</div>${complete ? '' : '<small><span class="status-dot"></span>Playing · result pending</small>'}</div>${complete ? `<span class="player-state">${icon('check',13)}${status}</span>` : `<div class="player-value">${amount(player.buy,{label:'Total buy-in'})}</div>`}</header>
+      ${complete ? `<dl class="player-ledger"><div><dt>Buy-in</dt><dd>${amount(player.buy)}</dd></div><div><dt>Cash-out</dt><dd>${amount(player.out)}</dd></div><div><dt>Result</dt><dd>${amount(result,{signed:true})}</dd></div></dl><div class="player-payment ${paymentTone}"><span>${icon(net === 0 ? 'check' : 'arrow',14)}${paymentLabel}</span>${net === 0 ? '' : `<strong>${money(Math.abs(net))}</strong>`}</div>` : net > 0 ? `<div class="unpaid-line">Buy-in payment outstanding · ${money(net)}</div>` : ''}
+      <footer class="player-bottom">${button({label:complete?'Edit stack':'+ Add money',action:complete?'cashout':'rebuy',variant:complete?'text-button edit-action':'text-button add-action',attributes:`data-id="${player.id}"`})}${button({label:complete?'Payments':'Cash out',action:complete?'payment':'cashout',variant:complete?'text-button payments-action':'text-button cashout-action',attributes:`data-id="${player.id}"`})}${complete ? button({label:'Receipt',action:'player-receipt',variant:'text-button',attributes:`data-id="${player.id}"`}) : ''}${button({content:icon('more',18),action:'player-menu',variant:'text-button ellipsis',attributes:`data-id="${player.id}" aria-label="More actions for ${escape(player.name)}"`})}</footer>
     </article>`;
   }
-  const api = { escape, icon, button, toggle, wordmark, badge, avatar, money, amount, notice, field, segment, keypad, empty, reviewSummary, playerCard };
+  const api = { escape, icon, button, toggle, wordmark, badge, avatar, money, amount, notice, field, actionRow, segment, keypad, empty, reviewSummary, tableCheck, transferCard, callClock, playerCard };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.CashUI = api;
 })(typeof window === 'undefined' ? {} : window);

@@ -28,6 +28,7 @@ test('build publishes only explicit public files and resolves local HTML/CSS ass
    assert(fs.existsSync(path.resolve(root,'dist',path.dirname(file),ref)),`${file} missing ${ref}`);
   }
  }
+ for(const file of all.filter(f=>f.endsWith('.js'))){for(const match of read(file).matchAll(/src="(assets\/[^"$]+)"/g)){const ref=match[1].split(/[?#]/)[0];assert(fs.existsSync(path.resolve(root,'dist',path.dirname(file),ref)),`${file} missing runtime image ${ref}`);}}
  const manifest=JSON.parse(read('manifest.webmanifest'));
  assert.equal(new URL(manifest.start_url,'https://example.test/repo/manifest.webmanifest').pathname,'/repo/visualizations/wireframes/index.html');
  assert(!read('sw.js').includes('__ASSETS__'));

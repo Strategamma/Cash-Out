@@ -31,3 +31,10 @@ These are conceptual references, not copied assets, code or exact timings. Publi
 Timing follows installed transitions-dev / transitions-polish guidance: sliding controls and page entrance 250ms, four-item history reveal capped at 40ms offsets (120ms total), immediate reduced-motion path. Existing View Transitions focus routing and capability checks remain; no Dribbble media ships with Cash Out.
 
 Receipt export uses Canvas PNG generation and capability-checked Web Share with a download fallback. API reference: [MDN share](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share), [MDN canShare](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare). Files are prepared before user activation; completion is not described as delivery.
+
+- [Magic UI Magic Card](https://magicui.design/docs/components/magic-card): pointer-following surface highlight. Adapted in plain CSS/JS for resume/profile surfaces; no React component installed. Fine-pointer and reduced-motion guards, static touch appearance; exact money stays still.
+- Motion recipes: Transitions.dev `18-texts-reveal` and `16-tabs-sliding`, from the installed skill references. Selected CSS retained; Cash Out sizes/colors override demo defaults. Native disclosure/view-timeline enhancements are progressive, with reduced-motion guards and no runtime dependency.
+
+- Transitions.dev `19-card-tilt`: copied CSS recipe with Cash Out overrides for native touch scrolling, profile corner tokens and fine-pointer-only four-degree interaction. No runtime dependency.
+
+- Modern Web Guidance `same-document-transitions` and `group-element-transitions`: native selected-identity/amount snapshots and keyed filtered-player rearrangement; unique temporary names, cleanup, focus preservation, reduced-motion and immediate unsupported paths.

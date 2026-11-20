@@ -5,19 +5,23 @@ function navigateDesign(){
  const target=location.hash||'#home',route=target.slice(1),seen=designTrail.lastIndexOf(route),direction=seen>=0?'backward':'forward';
  if(seen>=0)designTrail=designTrail.slice(0,seen+1);else designTrail.push(route);
  const focus=()=>{if((location.hash||'#home')===target&&!document.querySelector('dialog[open]'))$('#screen').focus({preventScroll:true})};
- const update=()=>{$('#screen').dataset.travel=direction;render();window.scrollTo({top:0,behavior:'instant'})};
+ const update=()=>{$('#screen').dataset.travel=direction;window.scrollTo({top:0,behavior:'instant'});render()};
  designTransition?.skipTransition?.();
+ window.CashMotionLibrary?.cancelListTransition?.();
  if(!document.startViewTransition||matchMedia('(prefers-reduced-motion: reduce)').matches||route==='early-exit'){
-  update();if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&route!=='early-exit'){$('#screen').classList.remove('fallback-enter');void $('#screen').offsetWidth;$('#screen').classList.add('fallback-enter')}focus();return;
+  window.CashMotionLibrary?.finishContinuity?.();update();if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&route!=='early-exit'){$('#screen').classList.remove('fallback-enter');void $('#screen').offsetWidth;$('#screen').classList.add('fallback-enter')}focus();return;
  }
  try{
+  window.CashMotionLibrary?.beginNavigation?.(route);
+  window.CashMotionLibrary?.prepareContinuity?.(route);
   const supportsTypes=CSS.supports('selector(:active-view-transition-type(forward))');
   const transition=document.startViewTransition(supportsTypes?{update,types:[direction]}:update);
   designTransition=transition;
   transition.ready?.catch(()=>{});
+  transition.ready?.then?.(()=>{if(designTransition===transition)window.CashMotionLibrary?.enterAfterNavigation?.()},()=>{if(designTransition===transition)window.CashMotionLibrary?.enterAfterNavigation?.()});
   transition.updateCallbackDone?.catch(()=>{});
-  transition.finished.catch(()=>{}).finally(()=>{if(designTransition===transition){designTransition=null;focus()}});
- }catch{update();focus()}
+  transition.finished.catch(()=>{}).finally(()=>{if(designTransition===transition){designTransition=null;window.CashMotionLibrary?.finishContinuity?.();window.CashMotionLibrary?.enterAfterNavigation?.();focus()}});
+ }catch{window.CashMotionLibrary?.finishContinuity?.();update();window.CashMotionLibrary?.enterAfterNavigation?.();focus()}
 }
 function chooseDirection(direction,initial=false){
  document.documentElement.dataset.direction=direction;

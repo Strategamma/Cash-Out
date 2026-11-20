@@ -35,7 +35,7 @@ function drawEntry() {
     <p class="muted">${kind === 'cashout' ? 'Enter the whole remaining stack, not the profit.' : paymentsOnly ? 'Record money only after it changes hands.' : ['edit','rake-edit'].includes(kind) ? 'Correct the recorded total. Actual payments stay unchanged.' : 'Shortcuts add to this draft. Review before saving.'}</p>
     <div class="amount-box"><small id="amount-label"></small><input id="amount" class="amount-input" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" aria-label="Amount" value="${esc(draft.amount)}"></div>
     ${['rebuy', 'rake', 'reentry'].includes(kind) ? `<div class="shortcuts">${btn('+' + (p ? money(p.last) : '₹200'), 'shortcut', '', `data-value="${p ? p.last / 100 : 200}"`)}${btn('+₹1,000', 'shortcut', '', 'data-value="1000"')}${btn('Clear', 'clear-amount', '')}</div>` : ''}
-    ${CashUI.keypad()}
+    <details class="entry-keypad"><summary>Use on-screen keypad</summary>${CashUI.keypad()}</details>
     <div id="amount-summary" class="entry-summary"></div>
     ${['rebuy', 'buy', 'reentry'].includes(kind) ? `<fieldset class="payment-choice"><legend>Has this money been received?</legend><label><input type="radio" name="received" value="received" ${draft.payment === 'received' ? 'checked' : ''}> Received now</label><label><input type="radio" name="received" value="later" ${draft.payment === 'later' ? 'checked' : ''}> Not yet · track as due</label></fieldset>` : ''}
     ${correction ? `<label for="correction-reason">Reason for correction</label><input id="correction-reason" maxlength="160" placeholder="For example, a stack was counted twice" value="${esc(draft.reason)}">` : ''}
@@ -94,17 +94,20 @@ function addShortcut(amount) {
 }
 
 function reviewEntry() {
-  if (!draft || $('#confirm-amount').disabled || entryError()) return;
+  if (!draft || ($('#confirm-amount').disabled && !$('#confirm-amount').hasAttribute('aria-busy')) || entryError()) return;
   draft.stage = 'review';
+  draft.callTimeWarning = null;
   const n = value(), p = draft.player, kind = draft.kind;
   const prior = ['rake','rake-edit'].includes(kind) ? table.rake : kind === 'cashout' ? p.out : p?.buy;
   const after = kind === 'rake-edit' ? n : kind === 'rake' ? table.rake + n : kind === 'cashout' ? (p.priorOut || 0) + n : kind === 'edit' ? n : ['receive','payout'].includes(kind) ? Math.abs(playerNet(p)) - n : p.buy + n;
   const unusuallyLarge = n >= 5000000 || ['rebuy','reentry'].includes(kind) && p.last > 0 && n > p.last * 5;
   const changed = ['edit','rake-edit'].includes(kind) || kind === 'cashout' && p.out !== null;
   const predictedDifference = kind === 'cashout' ? remaining() - (after - (p.out ?? p.priorOut ?? 0))
-    : kind === 'rake-edit' ? remaining() + table.rake - n : kind === 'rake' ? remaining() - n : kind === 'edit' ? remaining() + n - p.buy : remaining();
+    : kind === 'rake-edit' ? remaining() + table.rake - n : kind === 'rake' ? remaining() - n : kind === 'edit' ? remaining() + n - p.buy : ['buy','rebuy','reentry'].includes(kind) ? remaining() + n : remaining();
   const discrepancy = !['receive','payout'].includes(kind) && predictedDifference < 0;
   const requireAcknowledgement = unusuallyLarge || discrepancy;
+  draft.callTimeWarning=kind==='cashout'&&window.CashCallTime?CashCallTime.warning(p,after,p.out!==null?CashCallTime.current(p)?.endedAt??Date.now():Date.now(),window.CashClockUI?.uncertain()):null;
+  const identity=$('#sheet-body .entry-person');
   modal('Check before recording', entryTitle(),
     `${CashUI.reviewSummary({tableName:table.name,playerName:p?.name||'Rake account',cents:n,resultCents:after,label:kind==='cashout'?'STACK TO CASH OUT':['edit','rake-edit'].includes(kind)?'CORRECTED TOTAL':'AMOUNT TO RECORD',resultLabel:['receive','payout'].includes(kind)?'Outstanding after payment':kind==='cashout'?'All cash-outs this table':['rake','rake-edit'].includes(kind)?'Total rake after this':'Total buy-in after this'})}
     ${changed && prior !== null ? `<div class="row"><span>Previously recorded</span><strong>${money(prior)}</strong></div><div class="notice">Correction: ${esc(draft.reason)}. Earlier activity and actual payments stay recorded.</div>` : ''}
@@ -114,13 +117,17 @@ function reviewEntry() {
     ${discrepancy ? `<div class="notice ui-error">Cash-outs and rake would exceed buy-ins by ${money(-predictedDifference)}. Check the amount and missing buy-ins. The table cannot close until corrected.</div>` : ''}
     ${unusuallyLarge ? '<div class="notice">This amount is unusually large. Check the digits and cash amount.</div>' : ''}
     ${requireAcknowledgement ? '<label class="check large-check"><input type="checkbox" id="large-ack"> I checked the amount and the warning above.</label>' : ''}
+    ${draft.callTimeWarning?`<div class="notice ui-error">${draft.callTimeWarning.kind==='waiting'?'Call time has not been reached. '+esc(draft.callTimeWarning.label)+'.':'The call time cannot be verified.'} This cash-out is in profit. A friendly-house exception can still be recorded.</div><label class="check"><input type="checkbox" id="call-override"> Allow an early-profit house exception</label><label for="call-override-reason">Reason for exception</label><input id="call-override-reason" maxlength="160" placeholder="For example, agreed with the table">`:''}
     <p id="save-error" class="error" role="alert"></p>
-    <div class="actions"><button type="submit" class="primary" id="save-entry" ${requireAcknowledgement ? 'disabled' : ''}>Record ${money(n)}</button><button type="button" class="secondary" data-entry="back">Edit amount</button></div>
+    <div class="actions"><button type="submit" class="primary" id="save-entry" ${requireAcknowledgement||draft.callTimeWarning ? 'disabled' : ''}>Record ${money(n)}</button><button type="button" class="secondary" data-entry="back">Edit amount</button></div>
     <p class="hint">${isPlatform?'Saved on this device after confirmation':'Sample data only'} · one confirmation, one entry.</p>`, commitAmount);
+  if(identity){$('#sheet-body').prepend(identity);$('#sheet-body .review-subject')?.remove()}
+  window.CashPremium?.reviewed();
 }
 
 async function commitAmount() {
-  if (!draft || draft.stage !== 'review' || draft.committed || $('#save-entry').disabled) return;
+  if(draft?.callTimeWarning&&(!$('#call-override')?.checked||String($('#call-override-reason')?.value||'').trim().length<3))return;
+  if (!draft || draft.stage !== 'review' || draft.committed || ($('#save-entry').disabled && !$('#save-entry').hasAttribute('aria-busy')) || ($('#large-ack') && !$('#large-ack').checked)) return;
   if (simulateSaveFailure && !draft.retry) {
     draft.retry = true;
     $('#save-error').textContent = 'Simulated save failure. Nothing changed. Your amount is kept; retry safely.';
@@ -130,6 +137,7 @@ async function commitAmount() {
   draft.committed = true;
   $('#save-entry').disabled = true;
   const n = value(), p = draft.player, kind = draft.kind;
+  const earlyReason=draft.callTimeWarning?$('#call-override-reason').value.trim():'';
   const correction=['edit','rake-edit'].includes(kind)||kind==='cashout'&&p.out!==null;
   try{await persistChange(kind,()=>{
   if (kind === 'rake-edit') {
@@ -141,6 +149,7 @@ async function commitAmount() {
   } else if (kind === 'cashout') {
     event(p.out === null ? 'Cash-out recorded' : 'Cash-out corrected', `${p.name} · stack ${money(n)}${draft.reason ? ' · ' + draft.reason : ''}`);
     p.out = (p.priorOut || 0) + n;
+    window.CashCallTime?.finish(p,{reason:earlyReason,uncertain:window.CashClockUI?.uncertain()});
   } else if (kind === 'edit') {
     event('Buy-in corrected', `${p.name} · ${money(p.buy)} → ${money(n)} · ${draft.reason}`);
     p.buy = n;
@@ -150,6 +159,7 @@ async function commitAmount() {
     event('Payment recorded', `${p.name} · ${kind === 'receive' ? 'received' : 'paid'} ${money(n)}`);
   } else {
     if (kind === 'buy') table.players.push(p);
+    if(['buy','reentry'].includes(kind))window.CashCallTime?.start(p,table.callTimeMinutes??180);
     if (kind === 'reentry') { p.priorOut = p.out; p.out = null; }
     p.buy += n;
     p.last = n;
@@ -159,13 +169,14 @@ async function commitAmount() {
     event(kind === 'reentry' ? 'Player returned' : 'Buy-in recorded', `${p.name} · ${money(n)} · ${draft.payment === 'received' ? 'received' : 'unpaid'}`);
   }
   if (!['receive','payout'].includes(kind)) table.closed = false;
-  },{id:draft.key,subjectId:p?.id??null,family:kind==='edit'||['buy','rebuy','reentry'].includes(kind)?'buy-in':kind==='rake-edit'?'rake':kind,correction,reason:draft.reason});}
+  },{id:draft.key,subjectId:p?.id??null,family:kind==='edit'||['buy','rebuy','reentry'].includes(kind)?'buy-in':kind==='rake-edit'?'rake':kind,correction,reason:[draft.reason,earlyReason?'Early-profit house exception: '+earlyReason:''].filter(Boolean).join(' · ')});}
   catch(error){draft.committed=false;$('#save-entry').disabled=false;$('#save-error').textContent=error.message||'Not saved. Keep this entry open.';return;}
   const returnView = draft.returnView;
   const next = kind === 'cashout' && !playing().length ? 'review' : kind === 'buy' || kind === 'reentry' ? 'table' : returnView;
   forceClose();
   view = next;
-  render();
+  await render();
+  window.CashPremium?.committed(p?.id);
   notify(`${isPlatform?'Saved':'Sample'} ${['rake','rake-edit'].includes(kind) ? 'rake' : kind === 'cashout' ? 'cash-out' : kind === 'receive' || kind === 'payout' ? 'payment' : 'buy-in'} recorded · ${money(n)}`);
 }
 
@@ -181,9 +192,11 @@ function close() {
 document.addEventListener('change', e => {
   if (!draft && e.target.closest('#sheet') && e.target.matches('input,textarea,select') && e.target.id !== 'seat-search') formDirty = true;
   if (e.target.name === 'received' && draft) { draft.payment = e.target.value; updateAmount(); }
-  if (e.target.id === 'large-ack') $('#save-entry').disabled = !e.target.checked;
+  if(['large-ack','call-override'].includes(e.target.id))updateReviewConfirmation();
 });
+function updateReviewConfirmation(){if(!draft||draft.stage!=='review')return;$('#save-entry').disabled=Boolean($('#large-ack')&&!$('#large-ack').checked)||Boolean(draft.callTimeWarning&&(!$('#call-override')?.checked||String($('#call-override-reason')?.value||'').trim().length<3))}
 document.addEventListener('input', e => {
+  if(e.target.id==='call-override-reason')updateReviewConfirmation();
   if (e.target.id === 'correction-reason' && draft) { draft.reason = e.target.value; updateAmount(); }
   if (!draft && e.target.closest('#sheet') && e.target.matches('input,textarea') && e.target.id !== 'seat-search') formDirty = true;
 });

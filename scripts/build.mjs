@@ -8,7 +8,7 @@ const out=path.join(root,'dist');
 // Publish explicit public files only, never user exports or local databases.
 const files=[
  'visualizations/ui-kit/tokens.css',
- ...['index.html','library.html','core.js','components.js','motion.js','profile.js','ui-polish.js','ui-polish.css','entry.js','history.js','app.js','library.js','styles.css','components.css','motion.css','THIRD_PARTY_NOTICES.md','assets/table-pattern.svg','assets/brand/cash-out-wordmark-light.svg','assets/brand/cash-out-wordmark-dark.svg','assets/brand/cash-out-symbol.svg'].map(f=>'visualizations/wireframes/'+f),
+ ...['index.html','library.html','tournament.js','tournament-ui.js','call-time.js','call-time-ui.js','core.js','components.js','motion.js','profile.js','ui-polish.js','ui-polish.css','premium.js','premium.css','receipt.js','entry.js','history.js','app.js','library.js','styles.css','components.css','motion.css','THIRD_PARTY_NOTICES.md','assets/table-pattern.svg','assets/brand/cash-out-wordmark-light.svg','assets/brand/cash-out-wordmark-dark.svg','assets/brand/cash-out-symbol.svg','assets/brand/cash-out-symbol-light.svg','assets/brand/cash-out-symbol-dark.svg'].map(f=>'visualizations/wireframes/'+f),
  ...['config.js','drive.js','store.js','controller.js','ui.js'].map(f=>'src/backup/'+f),
  ...['magicui-LICENSE.md','spectrum-ui-LICENSE','transitions-dev-LICENSE'].map(f=>'visualizations/wireframes/licenses/'+f),
  'src/ledger/ledger.js',

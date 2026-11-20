@@ -64,7 +64,7 @@ test('received rebuy after a downward correction cannot overflow retained paymen
 
 test('UI capacity limits stop before attempting a save or opening a money draft',()=>{
  const nodes=new Map(),listeners={};
- const node=selector=>{if(!nodes.has(selector))nodes.set(selector,{style:{},open:false,addEventListener(){},setAttribute(){},innerHTML:'',textContent:''});return nodes.get(selector)};
+ const node=selector=>{if(!nodes.has(selector))nodes.set(selector,{style:{},open:false,querySelector(){return null},querySelectorAll(){return []},addEventListener(){},setAttribute(){},innerHTML:'',textContent:''});return nodes.get(selector)};
  const context=vm.createContext({window:{CASH_OUT_PLATFORM:true,scrollTo(){}},document:{querySelector:node,documentElement:{dataset:{theme:'dark'}},addEventListener:(name,fn)=>(listeners[name]??=[]).push(fn)},CashCore:core,CashUI:new Proxy({},{get:()=>()=>''}),CashMotion:{enter(){}},crypto:require('node:crypto').webcrypto,setTimeout:()=>0,clearTimeout(){},close(){}});
  vm.runInContext(fs.readFileSync('visualizations/wireframes/app.js','utf8'),context);
  vm.runInContext("contacts=Array.from({length:1000},(_,i)=>({id:i+1}));playerForm()",context);

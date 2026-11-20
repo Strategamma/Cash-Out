@@ -21,7 +21,8 @@
     const buy = table.players.reduce((sum, p) => sum + p.buy, 0);
     const out = table.players.reduce((sum, p) => sum + (p.out ?? p.priorOut ?? 0), 0);
     const pending = table.players.filter(p => p.out === null);
-    const difference = buy - out - table.rake;
+    const tournament=typeof module!=='undefined'&&module.exports?require('./tournament.js'):root.CashTournament;
+    const difference = buy - out - (table.type==='tournament'?tournament.fees(table):table.rake);
     return { buy, out, pending, difference, balanced: table.players.length > 0 && pending.length === 0 && difference === 0 };
   }
 
@@ -70,7 +71,7 @@
   function summaryModel(table, payments) {
     const totals = balance(table);
     return {
-      name: table.name, banker: table.banker, rake: table.rake,
+      name: table.name, banker: table.banker, gameType:table.type||'cash', rake: table.type==='tournament'?(typeof module!=='undefined'&&module.exports?require('./tournament.js'):root.CashTournament).fees(table):table.rake,
       totals: {buy:totals.buy,out:totals.out,difference:totals.difference,balanced:totals.balanced,pending:totals.pending.length},
       players: table.players.map(p=>({name:p.name,buy:p.buy,out:p.out,net:p.out===null?null:p.out-p.buy})),
       transfers: totals.balanced ? suggestTransfers(obligations(table,payments),table.mode,table.banker==='You'?'Banker (you)':`Banker (${table.banker})`) : []
@@ -107,6 +108,10 @@
       if (pay.reversed && (!pay.id || !data.payments.some(p=>p.reverses===pay.id))) fail('Missing payment reversal.');
     }
     if (t.events.some(e => !e || !text(e.title, 200) || !text(e.detail, 1000))) fail('Invalid activity history.');
+    const clock=typeof module!=='undefined'&&module.exports?require('./call-time.js'):root.CashCallTime;
+    clock?.validate(t);
+    const tournament=typeof module!=='undefined'&&module.exports?require('./tournament.js'):root.CashTournament;
+    tournament?.validate(t);
     if (t.closed && !balance(t).balanced) fail('A closed table must have complete, balanced stacks.');
     return data;
   }

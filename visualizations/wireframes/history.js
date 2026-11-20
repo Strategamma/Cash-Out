@@ -21,7 +21,7 @@
   function completed(tables){
     const seen=new Set();
     return tables.filter(t=>{
-      const valid=t.closed&&t.players.length>0&&t.players.every(p=>Number.isSafeInteger(p.out)&&p.out>=0&&Number.isSafeInteger(p.buy)&&p.buy>=0)&&t.players.reduce((s,p)=>s+p.buy-p.out,0)===t.rake;
+      const valid=t.type!=='tournament'&&t.closed&&t.players.length>0&&t.players.every(p=>Number.isSafeInteger(p.out)&&p.out>=0&&Number.isSafeInteger(p.buy)&&p.buy>=0)&&t.players.reduce((s,p)=>s+p.buy-p.out,0)===t.rake;
       if(!valid||seen.has(t.id))return false;seen.add(t.id);return true;
     }).sort((a,b)=>(a.date||'').localeCompare(b.date||''));
   }

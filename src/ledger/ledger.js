@@ -67,7 +67,7 @@
   const subjectId=meta.paymentId&&prior?prior.subjectId:meta.subjectId??null;
   const family=meta.paymentId&&prior?prior.family:meta.family||meta.kind;
   const entry={id:meta.id,sequence:previous.ledger.entries.length+1,time:meta.time,kind:meta.kind,family,subjectId,subjectName:next.contacts.find(p=>p.id===subjectId)?.name||'',reason:meta.reason||'',correction:Boolean(meta.correction),correctionOf:prior?.id||null,
-   table:{id:table.id,name:table.name,date:table.date,currency:'INR',banker:table.banker,bankerId:table.bankerId??null,smallBlind:table.small,bigBlind:table.big},changes};
+   table:{id:table.id,name:table.name,date:table.date,currency:'INR',banker:table.banker,bankerId:table.bankerId??null,smallBlind:table.small,bigBlind:table.big,gameType:table.type||'cash',callTimeMinutes:table.callTimeMinutes??180},changes};
   return {format:'cash-out-ledger',version:2,...state(next),ledger:{...copy(previous.ledger),entries:[...copy(previous.ledger.entries),entry]}};
  }
  function validate(data,core,history){
@@ -79,11 +79,12 @@
    if(!e||typeof e.id!=='string'||!e.id||ids.has(e.id)||e.sequence!==i+1||!Number.isFinite(Date.parse(e.time))||typeof e.kind!=='string'||!e.kind||typeof e.family!=='string'||!e.table?.id||e.table.currency!=='INR'||!Array.isArray(e.changes)||!e.changes.length)fail('Invalid or duplicate ledger transaction.');
    if(e.correction&&String(e.reason||'').trim().length<3)fail('Missing correction reason.');
    if(e.correctionOf&&!data.ledger.entries.slice(0,i).some(prior=>prior.id===e.correctionOf&&prior.table.id===e.table.id&&prior.subjectId===e.subjectId&&prior.family===e.family))fail('Invalid correction reference.');
-   const contexts=[projection.table,...projection.historyTables].map(({id,name,date,small,big,banker,bankerId})=>({id,name,date,small,big,banker,bankerId}));
+   const contexts=[projection.table,...projection.historyTables].map(({id,name,date,small,big,banker,bankerId,type,callTimeMinutes})=>({id,name,date,small,big,banker,bankerId,type,callTimeMinutes}));
    ids.add(e.id);for(const change of e.changes)replayChange(projection,change);
    validateState(projection,core,history);
    const context=[...contexts,projection.table,...projection.historyTables].find(t=>t.id===e.table.id);
    if(!context||e.table.name!==context.name||e.table.date!==context.date||e.table.smallBlind!==context.small||e.table.bigBlind!==context.big||e.table.banker!==context.banker||(e.table.bankerId??null)!==(context.bankerId??null))fail('Transaction table context does not match its recorded state.');
+   if(e.table.gameType!==undefined&&e.table.gameType!==(context.type||'cash')||e.table.callTimeMinutes!==undefined&&e.table.callTimeMinutes!==(context.callTimeMinutes??180))fail('Transaction game settings do not match their recorded state.');
   }
   if(!same(projection,state(data)))fail('Backup totals do not match the transaction ledger.');
   return data;

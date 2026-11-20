@@ -1,0 +1,18 @@
+/* Continuous-corner enhancement. Existing rounded geometry remains the fallback. */
+:root{--corner-panel:28px;--corner-surface:24px;--corner-control:16px;--corner-inset:10px}
+[data-direction=paper]{--corner-panel:24px;--corner-surface:20px;--corner-control:14px;--corner-inset:8px}
+.corner-scale{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 22px;max-width:520px}.corner-scale figure{margin:0;min-width:0}.corner-scale .corner-sample{height:64px;display:grid;place-items:center;background:var(--frost-fill);border:1px solid var(--frost-edge);border-radius:16px;color:var(--green);font-size:12px;font-weight:650}.corner-scale figcaption{font-size:10px;color:var(--muted);margin-top:7px}.corner-scale .control{background:var(--green);color:var(--on-green)}.corner-scale .inset{background:var(--ambient)}
+@supports(corner-shape:squircle){
+ /* Outer surfaces: no overflow/clipping changes, so disclosures and focus rings survive. */
+ .device :is(.night-seal,.card,.hero,.player,.live-table,.action-tile,.tournament-banner,.recovery-feature,.insight-overview,.insight-player-card,.preference-group,.profile-result,.clock-panel,.stat,.table-summary-v2,.banker-fields){corner-shape:squircle;border-radius:var(--corner-surface)}
+ .product-modal{corner-shape:squircle;border-radius:var(--corner-panel)}
+ /* Apply only to rectangular controls; circles and capsule filters retain their own geometry. */
+ .device .button:not(.text,.ledger-name,.icon-button,.pill),.device .keypad button,.device input:not([type=checkbox],[type=radio],[type=range],[type=file],[type=color]),.device :is(select,textarea,.number-input,.amount-well,.amount-box),.ledger-manage summary,.ledger-more-actions>.button{corner-shape:squircle;border-radius:var(--corner-control)}
+ .device :is(.notice,.ledger-payment,.call-pill){corner-shape:squircle;border-radius:var(--corner-inset)}
+ .table-toolbar .pills,.table-toolbar .pill,.nav .nav-indicator{corner-shape:squircle;border-radius:var(--corner-control)}
+ .table-toolbar .pill{border-radius:var(--corner-inset)}
+ /* Reflective edges must follow their host instead of retaining circular arcs. */
+ .live-table::after,.recovery-feature::after{corner-shape:inherit}
+ .corner-scale .corner-sample{corner-shape:squircle;border-radius:var(--corner-surface)}
+ .corner-scale .control{border-radius:var(--corner-control)}.corner-scale .inset{border-radius:var(--corner-inset)}
+}
