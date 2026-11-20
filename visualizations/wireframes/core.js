@@ -91,6 +91,7 @@
       if (new Set(list.map(p => p?.id)).size !== list.length || list.some(p => !validPlayer(p))) fail('Duplicate player IDs or invalid player details.');
     }
     if (t.players.some(p => ![p.buy, p.last, p.paidIn, p.paidOut].every(integer) || !(p.out === null || integer(p.out)) || p.priorOut !== undefined && (!integer(p.priorOut) || p.out !== null && p.out < p.priorOut) || p.out === null && p.paidOut > 0 && !(p.priorOut > 0))) fail('Invalid buy-in, stack, or payment amounts.');
+    if(data.contacts.some(p=>p.isSelf!==undefined&&typeof p.isSelf!=='boolean')||data.contacts.filter(p=>p.isSelf).length>1)fail('Invalid My contact identity.');
     if (data.contacts.some(p => !integer(p.last))) fail('Invalid saved shortcut amount.');
     if (t.players.some(p => !data.contacts.some(c => c.id === p.id))) fail('A seated player is missing from the roster.');
     if (t.bankerId !== undefined && !data.contacts.some(p=>p.id===t.bankerId)) fail('Unknown banker contact.');

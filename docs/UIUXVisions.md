@@ -35,3 +35,7 @@
 - Production clocks sit beside individual player names with text plus red/green state; no common cash-game timer. Tournament Live uses one saved blind clock, with rules/payout segments and cash/chip distinctions. History separates game types; recovery file actions use shared descriptive rows. All timers update text only, without per-tick saves or live-region announcements.
 
 - Grid-based tournament result amounts must use `max-width:none; white-space:nowrap`; the shared flex `.session-row>strong` percentage cap otherwise collapses the grid amount column despite a page-level no-overflow check. Verify rendered number line height, not just scroll width.
+
+- Approved first-run flow is integrated into the app: shared `emptyScene` for games/contacts/history/insights/table; optional single `isSelf` contact defaults banker. Standalone contacts save without seating; only explicit add-player continues to buy-in review. Self contact stays editable/restorable; active linked banker names update, closed snapshots stay intact. Reference: `visualizations/proposals/first-run/`.
+
+- First-run fidelity: use the approved composition rather than the generic accounting context row. Scope via `data-first-run` / catalogue `first-run-surface`; 27px headings, filled paper/green artwork, 52px arrow-led actions, rounded-square saved-contact avatar and photo row. Keep the existing ledger presentation isolated. First-run route transitions use a short fade/7px arrival with reduced-motion removal; never animate financial values.
