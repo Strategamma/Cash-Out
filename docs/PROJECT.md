@@ -1,7 +1,7 @@
 # Cash Out
 
 ## State
-PWA; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `src/ledger/`. Empty workspace; awaited IndexedDB saves. Dependency-free Node 22+: `npm test` (116 checks), `npm run build`; Pages workflow. Google activation deferred until deployment; automatic iCloud unresolved. Recovery/install: `web/boot.js`, `web/recovery.js`; explicit file receipts, storage/install/offline status. QA: `docs/QA_AUDIT.md`. Roadmap: `docs/ROADMAP.md`; setup: `docs/PLATFORM_SETUP.md`. Unpublished.
+PWA; native tooling removed. UI: `visualizations/wireframes/`; v2 ledger: `src/ledger/`. Empty workspace; awaited IndexedDB saves. Dependency-free Node 22+: `npm test` (120 checks), `npm run build`; Pages workflow. Google activation deferred until deployment; automatic iCloud unresolved. Recovery/install: `web/boot.js`, `web/recovery.js`; explicit file receipts, storage/install/offline status. QA: `docs/QA_AUDIT.md`. Roadmap: `docs/ROADMAP.md`; setup: `docs/PLATFORM_SETUP.md`. Unpublished.
 
 ## Confirmed requirements
 - iPhone-first, cross-platform; offline after app/data download.

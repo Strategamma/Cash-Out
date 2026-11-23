@@ -1,8 +1,8 @@
-# Match approved first-run design
-- Goal: Restore visual fidelity to the approved first-run screens.
-- Scope: First-run headings, illustrations, actions, success card and contact form presentation; preserve persistence and financial flows.
-- Approach: Isolate first-run presentation from generic app styles; reuse approved artwork and proportions, keep one motion owner.
-- Risks: Global style leakage, hidden controls at phone widths, animation overlap and focus regressions.
-- Verification: Existing contact tests/full suite/build, rendered app versus reference at phone widths and both themes, save/reload on disposable data only.
+# UX/UI audit and fixes
+- Goal: Remove verified friction and confusing actions across the app.
+- Scope: Contextual contact/seating actions, appearance persistence, mobile controls and form feedback; preserve ledger arithmetic and record history.
+- Approach: Reproduce issues in isolated browser data, fix shared causes with existing patterns and no dependencies.
+- Risks: Wrong-table seating, hidden controls, stale async photo reads, unavailable browser storage and navigation regressions.
+- Verification: Targeted UI regression tests, full suite/build; browser contact/table/amount/profile/history/settings/tournament views at narrow widths, both themes and reload.
 
-- Result: Restored approved first-run composition and shared artwork, including saved-contact card and photo selector. 116 tests/build passed; isolated browser save flow and dark/light 320/390px views verified.
+- Result: Fixed contextual routing/seat guards, theme persistence, avatar sizing, action priority, phone control sizing/focus clearance and photo selection feedback. 120 automated checks/build passed; isolated packaged flows and populated source layouts verified. Physical-device and cloud/deployment verification remain separate.

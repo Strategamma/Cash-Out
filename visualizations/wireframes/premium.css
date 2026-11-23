@@ -10,7 +10,7 @@ button,input{touch-action:manipulation}.title-row h2{font-size:clamp(26px,4vw,36
 .player{padding:15px;margin-block:10px}.player-top{align-items:center;gap:12px}.player-name{min-width:0}.player-name h3{font-size:16px;overflow-wrap:anywhere}.player-top .avatar{width:38px;height:38px;flex-basis:38px}.player-value .ui-amount{font-size:23px}.player-value small{font-size:10px}.player-result{padding-block:10px;margin-top:10px}.player-bottom{padding-top:9px;gap:5px}.player-bottom button{min-height:44px;font-size:12px}.player-filters{border-radius:18px;background:var(--panel);padding:4px;gap:3px}.player-filters button{min-height:48px;font-size:11px;border:0;border-radius:14px}.player-filters button.active{background:var(--accent);color:var(--page)}
 .co-tabs .co-selection{transition:left 240ms cubic-bezier(.22,1,.36,1),width 240ms cubic-bezier(.22,1,.36,1)}
 .co-tabs button[aria-selected=true]{color:var(--page)}.co-tabs [role=tab]{min-height:46px}.co-heading-enter,.spectrum-stat{animation:none}
-.avatar,.co-profile-identity h2,.player-name h3{width:fit-content}
+.co-profile-identity h2,.player-name h3{width:fit-content}
 #app:focus{outline:none}::view-transition{pointer-events:none}
 ::view-transition-group(app-content){animation-duration:300ms}::view-transition-old(app-content){animation:app-away 180ms ease-in both}::view-transition-new(app-content){animation:app-arrive 300ms cubic-bezier(.22,1,.36,1) both}
 ::view-transition-group(player-avatar),::view-transition-group(player-name){animation-duration:360ms;animation-timing-function:cubic-bezier(.22,1,.36,1)}
@@ -148,3 +148,21 @@ html[data-theme=light] :is(#app[data-first-run=true],.first-run-surface){--accen
 @media(max-width:350px){:is(#app[data-first-run=true],.first-run-surface) .first-run-art{height:158px}:is(#app[data-first-run=true],.first-run-surface) .first-run-art svg{height:160px;width:210px}:is(#app[data-first-run=true],.first-run-surface) .contact-saved-card{padding:18px}:is(#app[data-first-run=true],.first-run-surface) .contact-saved-card footer{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){:root:has(:is(#app[data-first-run=true],.first-run-surface))::view-transition-old(app-content),:root:has(:is(#app[data-first-run=true],.first-run-surface))::view-transition-new(app-content){animation:none}}
 @media(prefers-reduced-transparency:reduce){:is(#app[data-first-run=true],.first-run-surface) .contact-saved-card{background:var(--surface);backdrop-filter:none}}
+
+/* Audit fixes: reachable actions, stable identity sizing and phone-safe controls. */
+html{scroll-padding-block-start:80px;scroll-padding-block-end:calc(110px + env(safe-area-inset-bottom,0px))}
+#sheet{scroll-padding-block:24px}
+#app .app-context .icon,#app[data-first-run=true] .first-run-settings{min-width:44px;min-height:44px;width:44px;height:44px;flex-basis:44px}
+#app .co-profile-identity .profile-heading{min-width:0;flex:1}
+#app .co-profile-identity .profile-heading>div{min-width:0}
+#app .co-profile-identity .avatar{width:52px;height:52px;flex:0 0 52px;border-radius:18px}
+#app .co-profile-identity h2{width:auto;overflow-wrap:anywhere}
+#app .profile-seat-action{margin:18px 0 24px}
+#sheet input:not([type=checkbox]):not([type=radio]):not([type=range]):not(.amount-input),#sheet select,#sheet textarea,.search{font-size:16px}
+#sheet .check{min-height:44px;padding-block:8px}
+.contact-photo-status{font-size:12px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}
+.contact-photo-status:empty{display:none}
+.title-row h2,.first-run-empty h3{text-wrap:balance}
+p{ text-wrap:pretty }
+
+.rake>.text-button{min-width:44px}
